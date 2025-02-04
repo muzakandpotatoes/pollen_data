@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pollen Animation Viewer</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .version-select, .speed-control {
+            margin-bottom: 20px;
+        }
+        .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .speed-slider-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .speed-labels {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 4px;
+            font-size: 14px;
+            color: #666;
+        }
+        #slider, #speedSlider {
+            flex-grow: 1;
+        }
+        #playButton {
+            padding: 8px 16px;
+            border: none;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #playButton:hover {
+            background-color: #e0e0e0;
+        }
+        img {
+            width: 100%;
+            border-radius: 4px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="version-select">
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="version" value="raw">
+                    Raw Data
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="version" value="lowess" checked>
+                    LOWESS Smoothed
+                </label>
+            </div>
+        </div>
+
+        <div class="speed-control">
+            <div class="speed-slider-container">
+                <input type="range" id="speedSlider" min="10" max="300" value="100" step="1">
+            </div>
+            <div class="speed-labels">
+                <span>Fast</span>
+                <span>Slow</span>
+            </div>
+        </div>
+
+        <img id="frame" alt="Current frame">
+        
+        <div class="controls">
+            <button id="playButton">Play</button>
+            <input type="range" id="slider" min="0" value="0">
+        </div>
+    </div>
+
+    <script>
+        // Configuration and helper functions
+        function convertSliderToFrameRate(sliderValue) {
+            return Math.round(Math.exp(Math.log(10) + (Math.log(300) - Math.log(10)) * (sliderValue - 10) / (300 - 10)));
+        }
+        let frameRate = convertSliderToFrameRate(100);  // Convert default value through same scaling
+
+        // Elements
+        const frame = document.getElementById('frame');
+        const slider = document.getElementById('slider');
+        const playButton = document.getElementById('playButton');
+        const versionInputs = document.getElementsByName('version');
+        const speedSlider = document.getElementById('speedSlider');
+
+        // State
+        let currentFrame = 0;
+        let isPlaying = false;
+        let intervalId = null;
+        let currentVersion = 'lowess';
+        let totalFrames = 0;
+
+        function imageExists(url) {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => resolve(true);
+                img.onerror = () => resolve(false);
+                img.src = url;
+            });
+        }
+
+        async function countFrames(version) {
+            let frameCount = 0;
+            while (true) {
+                const paddedNumber = String(frameCount).padStart(3, '0');
+                const exists = await imageExists(`frames/${version}/frame_${paddedNumber}.png`);
+                if (!exists) break;
+                frameCount++;
+            }
+            console.log(`Found ${frameCount} frames for ${version}`);
+            return frameCount;
+        }
+
+        function loadFrame(frameNumber) {
+            return new Promise((resolve) => {
+                const paddedNumber = String(frameNumber).padStart(3, '0');
+                const newImage = new Image();
+                newImage.onload = () => {
+                    frame.src = newImage.src;
+                    slider.value = frameNumber;
+                    resolve();
+                };
+                newImage.src = `frames/${currentVersion}/frame_${paddedNumber}.png`;
+            });
+        }
+
+        function togglePlay() {
+            isPlaying = !isPlaying;
+            playButton.textContent = isPlaying ? 'Pause' : 'Play';
+
+            if (isPlaying) {
+                intervalId = setInterval(() => {
+                    currentFrame = (currentFrame + 1) % totalFrames;
+                    loadFrame(currentFrame);
+                }, frameRate);
+            } else {
+                clearInterval(intervalId);
+            }
+        }
+
+        async function initialize() {
+            totalFrames = await countFrames(currentVersion);
+            slider.max = totalFrames - 1;
+            await loadFrame(0);
+            console.log('Initialized with', totalFrames, 'frames');
+        }
+
+        playButton.addEventListener('click', togglePlay);
+
+        slider.addEventListener('input', (e) => {
+            currentFrame = parseInt(e.target.value);
+            loadFrame(currentFrame);
+            if (isPlaying) {
+                togglePlay();
+            }
+        });
+
+        versionInputs.forEach(input => {
+            input.addEventListener('change', async (e) => {
+                currentVersion = e.target.value;
+                const wasPlaying = isPlaying;
+                if (isPlaying) {
+                    clearInterval(intervalId);
+                }
+                
+                totalFrames = await countFrames(currentVersion);
+                slider.max = totalFrames - 1;
+                currentFrame = Math.min(currentFrame, totalFrames - 1);
+                await loadFrame(currentFrame);
+                
+                if (wasPlaying) {
+                    intervalId = setInterval(() => {
+                        currentFrame = (currentFrame + 1) % totalFrames;
+                        loadFrame(currentFrame);
+                    }, frameRate);
+                }
+            });
+        });
+
+        // Add speed slider handling
+        speedSlider.addEventListener('input', (e) => {
+            const sliderValue = parseInt(e.target.value);
+            frameRate = convertSliderToFrameRate(sliderValue);
+            
+            // If currently playing, restart the interval with new frame rate
+            if (isPlaying) {
+                clearInterval(intervalId);
+                intervalId = setInterval(() => {
+                    currentFrame = (currentFrame + 1) % totalFrames;
+                    loadFrame(currentFrame);
+                }, frameRate);
+            }
+        });
+
+        window.addEventListener('load', initialize);
+    </script>
+</body>
+</html>

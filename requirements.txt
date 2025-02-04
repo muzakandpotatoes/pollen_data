@@ -1,0 +1,16 @@
+boto3
+ipykernel
+jsonlines
+requests
+botocore
+python-dotenv
+pandas
+matplotlib
+scipy
+statsmodels
+filterpy
+numpy
+geopandas
+geopy
+cartopy
+Pillow

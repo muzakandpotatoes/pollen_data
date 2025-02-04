@@ -1,0 +1,3435 @@
+{
+    "type": "allergy",
+    "Locations": {
+        "ABR": {
+            "key": "ABR",
+            "City": "Aberdeen",
+            "State": "SD",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.9
+                }
+            ],
+            "DisplayLocation": "Aberdeen, SD",
+            "ZIP": "57401"
+        },
+        "ABY": {
+            "key": "ABY",
+            "City": "Albany",
+            "State": "GA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.1
+                }
+            ],
+            "DisplayLocation": "Albany, GA",
+            "ZIP": "31701"
+        },
+        "ACT": {
+            "key": "ACT",
+            "City": "Waco",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.7
+                }
+            ],
+            "DisplayLocation": "Waco, TX",
+            "ZIP": "76701"
+        },
+        "ACY": {
+            "key": "ACY",
+            "City": "Atlantic City",
+            "State": "NJ",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.8
+                }
+            ],
+            "DisplayLocation": "Atlantic City, NJ",
+            "ZIP": "08400"
+        },
+        "AHN": {
+            "key": "AHN",
+            "City": "Athens",
+            "State": "GA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.9
+                }
+            ],
+            "DisplayLocation": "Athens, GA",
+            "ZIP": "30601"
+        },
+        "ALB": {
+            "key": "ALB",
+            "City": "Albany",
+            "State": "NY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 9.7
+                }
+            ],
+            "DisplayLocation": "Albany, NY",
+            "ZIP": "12201"
+        },
+        "ALO": {
+            "key": "ALO",
+            "City": "Waterloo",
+            "State": "IA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.8
+                }
+            ],
+            "DisplayLocation": "Waterloo, IA",
+            "ZIP": "50701"
+        },
+        "ALS": {
+            "key": "ALS",
+            "City": "Alamosa",
+            "State": "CO",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.6
+                }
+            ],
+            "DisplayLocation": "Alamosa, CO",
+            "ZIP": "81101"
+        },
+        "AMA": {
+            "key": "AMA",
+            "City": "Amarillo",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.0
+                }
+            ],
+            "DisplayLocation": "Amarillo, TX",
+            "ZIP": "79101"
+        },
+        "AOO": {
+            "key": "AOO",
+            "City": "Altoona",
+            "State": "PA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.5
+                }
+            ],
+            "DisplayLocation": "Altoona, PA",
+            "ZIP": "16601"
+        },
+        "APN": {
+            "key": "APN",
+            "City": "Alpena",
+            "State": "MI",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.0
+                }
+            ],
+            "DisplayLocation": "Alpena, MI",
+            "ZIP": "49707"
+        },
+        "AST": {
+            "key": "AST",
+            "City": "Astoria",
+            "State": "OR",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 0.2
+                }
+            ],
+            "DisplayLocation": "Astoria, OR",
+            "ZIP": "97103"
+        },
+        "ATL": {
+            "key": "ATL",
+            "City": "Atlanta",
+            "State": "GA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.5
+                }
+            ],
+            "DisplayLocation": "Atlanta, GA",
+            "ZIP": "30301"
+        },
+        "AUS": {
+            "key": "AUS",
+            "City": "Austin",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.2
+                }
+            ],
+            "DisplayLocation": "Austin, TX",
+            "ZIP": "73301"
+        },
+        "AUW": {
+            "key": "AUW",
+            "City": "Wausau",
+            "State": "WI",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.9
+                }
+            ],
+            "DisplayLocation": "Wausau, WI",
+            "ZIP": "54177"
+        },
+        "AVL": {
+            "key": "AVL",
+            "City": "Asheville",
+            "State": "NC",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.5
+                }
+            ],
+            "DisplayLocation": "Asheville, NC",
+            "ZIP": "28801"
+        },
+        "AVP": {
+            "key": "AVP",
+            "City": "Scranton",
+            "State": "PA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.6
+                }
+            ],
+            "DisplayLocation": "Scranton, PA",
+            "ZIP": "18501"
+        },
+        "BDL": {
+            "key": "BDL",
+            "City": "Hartford",
+            "State": "CT",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.3
+                }
+            ],
+            "DisplayLocation": "Hartford, CT",
+            "ZIP": "06057"
+        },
+        "BDR": {
+            "key": "BDR",
+            "City": "Bridgeport",
+            "State": "CT",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.7
+                }
+            ],
+            "DisplayLocation": "Bridgeport, CT",
+            "ZIP": "06601"
+        },
+        "BFF": {
+            "key": "BFF",
+            "City": "Scottsbluff",
+            "State": "NE",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.4
+                }
+            ],
+            "DisplayLocation": "Scottsbluff, NE",
+            "ZIP": "69361"
+        },
+        "BFL": {
+            "key": "BFL",
+            "City": "Bakersfield",
+            "State": "CA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.4
+                }
+            ],
+            "DisplayLocation": "Bakersfield, CA",
+            "ZIP": "93301"
+        },
+        "BFM": {
+            "key": "BFM",
+            "City": "Mobile",
+            "State": "AL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.2
+                }
+            ],
+            "DisplayLocation": "Mobile, AL",
+            "ZIP": "36601"
+        },
+        "BGM": {
+            "key": "BGM",
+            "City": "Binghamton",
+            "State": "NY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.3
+                }
+            ],
+            "DisplayLocation": "Binghamton, NY",
+            "ZIP": "13901"
+        },
+        "BGR": {
+            "key": "BGR",
+            "City": "Bangor",
+            "State": "ME",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.3
+                }
+            ],
+            "DisplayLocation": "Bangor, ME",
+            "ZIP": "04401"
+        },
+        "BHM": {
+            "key": "BHM",
+            "City": "Birmingham",
+            "State": "AL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 0.6
+                }
+            ],
+            "DisplayLocation": "Birmingham, AL",
+            "ZIP": "35201"
+        },
+        "BHX": {
+            "key": "BHX",
+            "City": "Eureka",
+            "State": "CA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.6
+                }
+            ],
+            "DisplayLocation": "Eureka, CA",
+            "ZIP": "95501"
+        },
+        "BIL": {
+            "key": "BIL",
+            "City": "Billings",
+            "State": "MT",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.6
+                }
+            ],
+            "DisplayLocation": "Billings, MT",
+            "ZIP": "59101"
+        },
+        "BIS": {
+            "key": "BIS",
+            "City": "Bismarck",
+            "State": "ND",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.5
+                }
+            ],
+            "DisplayLocation": "Bismarck, ND",
+            "ZIP": "58501"
+        },
+        "BJI": {
+            "key": "BJI",
+            "City": "Bemidji",
+            "State": "MN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.7
+                }
+            ],
+            "DisplayLocation": "Bemidji, MN",
+            "ZIP": "56601"
+        },
+        "BKW": {
+            "key": "BKW",
+            "City": "Beckley",
+            "State": "WV",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.5
+                }
+            ],
+            "DisplayLocation": "Beckley, WV",
+            "ZIP": "25801"
+        },
+        "BLI": {
+            "key": "BLI",
+            "City": "Bellingham",
+            "State": "WA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 0.7
+                }
+            ],
+            "DisplayLocation": "Bellingham, WA",
+            "ZIP": "98225"
+        },
+        "BNA": {
+            "key": "BNA",
+            "City": "Nashville",
+            "State": "TN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.1
+                }
+            ],
+            "DisplayLocation": "Nashville, TN",
+            "ZIP": "37201"
+        },
+        "BNO": {
+            "key": "BNO",
+            "City": "Burns",
+            "State": "OR",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.4
+                }
+            ],
+            "DisplayLocation": "Burns, OR",
+            "ZIP": "97720"
+        },
+        "BOI": {
+            "key": "BOI",
+            "City": "Boise",
+            "State": "ID",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.4
+                }
+            ],
+            "DisplayLocation": "Boise, ID",
+            "ZIP": "83701"
+        },
+        "BOS": {
+            "key": "BOS",
+            "City": "Boston",
+            "State": "MA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.5
+                }
+            ],
+            "DisplayLocation": "Boston, MA",
+            "ZIP": "02101"
+        },
+        "BPT": {
+            "key": "BPT",
+            "City": "Beaumont",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.6
+                }
+            ],
+            "DisplayLocation": "Beaumont, TX",
+            "ZIP": "77701"
+        },
+        "BRL": {
+            "key": "BRL",
+            "City": "Burlington",
+            "State": "IA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.0
+                }
+            ],
+            "DisplayLocation": "Burlington, IA",
+            "ZIP": "52601"
+        },
+        "BRO": {
+            "key": "BRO",
+            "City": "Brownsville",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.0
+                }
+            ],
+            "DisplayLocation": "Brownsville, TX",
+            "ZIP": "78520"
+        },
+        "BTM": {
+            "key": "BTM",
+            "City": "Butte",
+            "State": "MT",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.7
+                }
+            ],
+            "DisplayLocation": "Butte, MT",
+            "ZIP": "59448"
+        },
+        "BTR": {
+            "key": "BTR",
+            "City": "Baton Rouge",
+            "State": "LA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.6
+                }
+            ],
+            "DisplayLocation": "Baton Rouge, LA",
+            "ZIP": "70801"
+        },
+        "BTV": {
+            "key": "BTV",
+            "City": "Burlington",
+            "State": "VT",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.7
+                }
+            ],
+            "DisplayLocation": "Burlington, VT",
+            "ZIP": "05401"
+        },
+        "BUF": {
+            "key": "BUF",
+            "City": "Buffalo",
+            "State": "NY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.6
+                }
+            ],
+            "DisplayLocation": "Buffalo, NY",
+            "ZIP": "14201"
+        },
+        "BWG": {
+            "key": "BWG",
+            "City": "Bowling Green",
+            "State": "KY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.5
+                }
+            ],
+            "DisplayLocation": "Bowling Green, KY",
+            "ZIP": "42101"
+        },
+        "BWI": {
+            "key": "BWI",
+            "City": "Baltimore",
+            "State": "MD",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.9
+                }
+            ],
+            "DisplayLocation": "Baltimore, MD",
+            "ZIP": "21201"
+        },
+        "CAE": {
+            "key": "CAE",
+            "City": "Columbia",
+            "State": "SC",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.6
+                }
+            ],
+            "DisplayLocation": "Columbia, SC",
+            "ZIP": "29169"
+        },
+        "CAK": {
+            "key": "CAK",
+            "City": "Akron-Canton",
+            "State": "OH",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 1.4
+                }
+            ],
+            "DisplayLocation": "Akron-Canton, OH",
+            "ZIP": "44720"
+        },
+        "CAR": {
+            "key": "CAR",
+            "City": "Caribou",
+            "State": "ME",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.3
+                }
+            ],
+            "DisplayLocation": "Caribou, ME",
+            "ZIP": "04736"
+        },
+        "CGI": {
+            "key": "CGI",
+            "City": "Cape Girardeau",
+            "State": "MO",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.3
+                }
+            ],
+            "DisplayLocation": "Cape Girardeau, MO",
+            "ZIP": "63701"
+        },
+        "CHA": {
+            "key": "CHA",
+            "City": "Chattanooga",
+            "State": "TN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.2
+                }
+            ],
+            "DisplayLocation": "Chattanooga, TN",
+            "ZIP": "37401"
+        },
+        "CLX": {
+            "key": "CLX",
+            "City": "Beaufort",
+            "State": "SC",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.1
+                }
+            ],
+            "DisplayLocation": "Beaufort, SC",
+            "ZIP": "29901"
+        },
+        "CHS": {
+            "key": "CHS",
+            "City": "Charleston",
+            "State": "SC",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.5
+                }
+            ],
+            "DisplayLocation": "Charleston, SC",
+            "ZIP": "29401"
+        },
+        "CID": {
+            "key": "CID",
+            "City": "Cedar Rapids",
+            "State": "IA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.1
+                }
+            ],
+            "DisplayLocation": "Cedar Rapids, IA",
+            "ZIP": "52401"
+        },
+        "CIN": {
+            "key": "CIN",
+            "City": "Cincinnati",
+            "State": "OH",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.5
+                }
+            ],
+            "DisplayLocation": "Cincinnati, OH",
+            "ZIP": "45201"
+        },
+        "CLE": {
+            "key": "CLE",
+            "City": "Cleveland",
+            "State": "OH",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 1.1
+                }
+            ],
+            "DisplayLocation": "Cleveland, OH",
+            "ZIP": "44101"
+        },
+        "CLT": {
+            "key": "CLT",
+            "City": "Charlotte",
+            "State": "NC",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.8
+                }
+            ],
+            "DisplayLocation": "Charlotte, NC",
+            "ZIP": "28201"
+        },
+        "CMH": {
+            "key": "CMH",
+            "City": "Columbus",
+            "State": "OH",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.0
+                }
+            ],
+            "DisplayLocation": "Columbus, OH",
+            "ZIP": "43085"
+        },
+        "CMI": {
+            "key": "CMI",
+            "City": "Champaign",
+            "State": "IL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.4
+                }
+            ],
+            "DisplayLocation": "Champaign, IL",
+            "ZIP": "61820"
+        },
+        "CNK": {
+            "key": "CNK",
+            "City": "Concordia",
+            "State": "KS",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.5
+                }
+            ],
+            "DisplayLocation": "Concordia, KS",
+            "ZIP": "66901"
+        },
+        "CON": {
+            "key": "CON",
+            "City": "Concord",
+            "State": "NH",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 10.3
+                }
+            ],
+            "DisplayLocation": "Concord, NH",
+            "ZIP": "03301"
+        },
+        "COS": {
+            "key": "COS",
+            "City": "Colorado Springs",
+            "State": "CO",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.6
+                }
+            ],
+            "DisplayLocation": "Colorado Springs, CO",
+            "ZIP": "80901"
+        },
+        "COU": {
+            "key": "COU",
+            "City": "Columbia",
+            "State": "MO",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.5
+                }
+            ],
+            "DisplayLocation": "Columbia, MO",
+            "ZIP": "65201"
+        },
+        "CPR": {
+            "key": "CPR",
+            "City": "Casper",
+            "State": "WY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.3
+                }
+            ],
+            "DisplayLocation": "Casper, WY",
+            "ZIP": "82601"
+        },
+        "CRP": {
+            "key": "CRP",
+            "City": "Corpus Christi",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.6
+                }
+            ],
+            "DisplayLocation": "Corpus Christi, TX",
+            "ZIP": "78401"
+        },
+        "CRW": {
+            "key": "CRW",
+            "City": "Charleston",
+            "State": "WV",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.3
+                }
+            ],
+            "DisplayLocation": "Charleston, WV",
+            "ZIP": "25301"
+        },
+        "CSG": {
+            "key": "CSG",
+            "City": "Columbus",
+            "State": "GA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 1.4
+                }
+            ],
+            "DisplayLocation": "Columbus, GA",
+            "ZIP": "31900"
+        },
+        "CXY": {
+            "key": "CXY",
+            "City": "Harrisburg/Middletown",
+            "State": "PA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.1
+                }
+            ],
+            "DisplayLocation": "Harrisburg/Middletown, PA",
+            "ZIP": "17057"
+        },
+        "CYS": {
+            "key": "CYS",
+            "City": "Cheyenne",
+            "State": "WY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.2
+                }
+            ],
+            "DisplayLocation": "Cheyenne, WY",
+            "ZIP": "82001"
+        },
+        "DAB": {
+            "key": "DAB",
+            "City": "Daytona Beach",
+            "State": "FL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.6
+                }
+            ],
+            "DisplayLocation": "Daytona Beach, FL",
+            "ZIP": "32114"
+        },
+        "DAY": {
+            "key": "DAY",
+            "City": "Dayton",
+            "State": "OH",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.2
+                }
+            ],
+            "DisplayLocation": "Dayton, OH",
+            "ZIP": "45401"
+        },
+        "EBQ": {
+            "key": "EBQ",
+            "City": "Dubuque",
+            "State": "IA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.8
+                }
+            ],
+            "DisplayLocation": "Dubuque, IA",
+            "ZIP": "52001"
+        },
+        "DCA": {
+            "key": "DCA",
+            "City": "Washington",
+            "State": "DC",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.4
+                }
+            ],
+            "DisplayLocation": "Washington, DC",
+            "ZIP": "20001"
+        },
+        "DDC": {
+            "key": "DDC",
+            "City": "Dodge City",
+            "State": "KS",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.2
+                }
+            ],
+            "DisplayLocation": "Dodge City, KS",
+            "ZIP": "67801"
+        },
+        "DEN": {
+            "key": "DEN",
+            "City": "Denver",
+            "State": "CO",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.3
+                }
+            ],
+            "DisplayLocation": "Denver, CO",
+            "ZIP": "80201"
+        },
+        "DFW": {
+            "key": "DFW",
+            "City": "Dallas",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.4
+                }
+            ],
+            "DisplayLocation": "Dallas, TX",
+            "ZIP": "75065"
+        },
+        "FTW": {
+            "key": "FTW",
+            "City": "Fort Worth",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.4
+                }
+            ],
+            "DisplayLocation": "Fort Worth, TX",
+            "ZIP": "76101"
+        },
+        "DIK": {
+            "key": "DIK",
+            "City": "Dickinson",
+            "State": "ND",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.3
+                }
+            ],
+            "DisplayLocation": "Dickinson, ND",
+            "ZIP": "58601"
+        },
+        "DLH": {
+            "key": "DLH",
+            "City": "Duluth",
+            "State": "MN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.8
+                }
+            ],
+            "DisplayLocation": "Duluth, MN",
+            "ZIP": "55801"
+        },
+        "DNL": {
+            "key": "DNL",
+            "City": "Augusta",
+            "State": "GA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.5
+                }
+            ],
+            "DisplayLocation": "Augusta, GA",
+            "ZIP": "30901"
+        },
+        "DOV": {
+            "key": "DOV",
+            "City": "Dover",
+            "State": "DE",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.6
+                }
+            ],
+            "DisplayLocation": "Dover, DE",
+            "ZIP": "19901"
+        },
+        "DRT": {
+            "key": "DRT",
+            "City": "Del Rio",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.9
+                }
+            ],
+            "DisplayLocation": "Del Rio, TX",
+            "ZIP": "78840"
+        },
+        "DSM": {
+            "key": "DSM",
+            "City": "Des Moines",
+            "State": "IA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.7
+                }
+            ],
+            "DisplayLocation": "Des Moines, IA",
+            "ZIP": "50265"
+        },
+        "DTW": {
+            "key": "DTW",
+            "City": "Detroit",
+            "State": "MI",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.5
+                }
+            ],
+            "DisplayLocation": "Detroit, MI",
+            "ZIP": "48201"
+        },
+        "EAU": {
+            "key": "EAU",
+            "City": "Eau Claire",
+            "State": "WI",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.2
+                }
+            ],
+            "DisplayLocation": "Eau Claire, WI",
+            "ZIP": "54701"
+        },
+        "ELK": {
+            "key": "ELK",
+            "City": "Elkins",
+            "State": "WV",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.9
+                }
+            ],
+            "DisplayLocation": "Elkins, WV",
+            "ZIP": "26241"
+        },
+        "ELP": {
+            "key": "ELP",
+            "City": "El Paso",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.0
+                }
+            ],
+            "DisplayLocation": "El Paso, TX",
+            "ZIP": "79901"
+        },
+        "ELY": {
+            "key": "ELY",
+            "City": "Ely",
+            "State": "NV",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.1
+                }
+            ],
+            "DisplayLocation": "Ely, NV",
+            "ZIP": "89301"
+        },
+        "ERI": {
+            "key": "ERI",
+            "City": "Erie",
+            "State": "PA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.2
+                }
+            ],
+            "DisplayLocation": "Erie, PA",
+            "ZIP": "16501"
+        },
+        "EUG": {
+            "key": "EUG",
+            "City": "Eugene",
+            "State": "OR",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.3
+                }
+            ],
+            "DisplayLocation": "Eugene, OR",
+            "ZIP": "97401"
+        },
+        "EVV": {
+            "key": "EVV",
+            "City": "Evansville",
+            "State": "IN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.3
+                }
+            ],
+            "DisplayLocation": "Evansville, IN",
+            "ZIP": "47701"
+        },
+        "EWR": {
+            "key": "EWR",
+            "City": "Newark",
+            "State": "NJ",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.1
+                }
+            ],
+            "DisplayLocation": "Newark, NJ",
+            "ZIP": "07101"
+        },
+        "EYW": {
+            "key": "EYW",
+            "City": "Key West",
+            "State": "FL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.2
+                }
+            ],
+            "DisplayLocation": "Key West, FL",
+            "ZIP": "33040"
+        },
+        "FAR": {
+            "key": "FAR",
+            "City": "Fargo",
+            "State": "ND",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.6
+                }
+            ],
+            "DisplayLocation": "Fargo, ND",
+            "ZIP": "58078"
+        },
+        "FAT": {
+            "key": "FAT",
+            "City": "Fresno",
+            "State": "CA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.1
+                }
+            ],
+            "DisplayLocation": "Fresno, CA",
+            "ZIP": "93650"
+        },
+        "FCA": {
+            "key": "FCA",
+            "City": "Kalispell",
+            "State": "MT",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.4
+                }
+            ],
+            "DisplayLocation": "Kalispell, MT",
+            "ZIP": "59901"
+        },
+        "FLG": {
+            "key": "FLG",
+            "City": "Flagstaff",
+            "State": "AZ",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.8
+                }
+            ],
+            "DisplayLocation": "Flagstaff, AZ",
+            "ZIP": "86001"
+        },
+        "FLO": {
+            "key": "FLO",
+            "City": "Florence",
+            "State": "SC",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.0
+                }
+            ],
+            "DisplayLocation": "Florence, SC",
+            "ZIP": "29501"
+        },
+        "FMN": {
+            "key": "FMN",
+            "City": "Farmington",
+            "State": "NM",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.8
+                }
+            ],
+            "DisplayLocation": "Farmington, NM",
+            "ZIP": "87401"
+        },
+        "FNT": {
+            "key": "FNT",
+            "City": "Flint",
+            "State": "MI",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.3
+                }
+            ],
+            "DisplayLocation": "Flint, MI",
+            "ZIP": "48501"
+        },
+        "FSD": {
+            "key": "FSD",
+            "City": "Sioux Falls",
+            "State": "SD",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.2
+                }
+            ],
+            "DisplayLocation": "Sioux Falls, SD",
+            "ZIP": "57101"
+        },
+        "FSM": {
+            "key": "FSM",
+            "City": "Fort Smith",
+            "State": "AR",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.7
+                }
+            ],
+            "DisplayLocation": "Fort Smith, AR",
+            "ZIP": "72901"
+        },
+        "FWA": {
+            "key": "FWA",
+            "City": "Fort Wayne",
+            "State": "IN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.3
+                }
+            ],
+            "DisplayLocation": "Fort Wayne, IN",
+            "ZIP": "46801"
+        },
+        "GEG": {
+            "key": "GEG",
+            "City": "Spokane",
+            "State": "WA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.1
+                }
+            ],
+            "DisplayLocation": "Spokane, WA",
+            "ZIP": "99201"
+        },
+        "GFK": {
+            "key": "GFK",
+            "City": "Grand Forks",
+            "State": "ND",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.6
+                }
+            ],
+            "DisplayLocation": "Grand Forks, ND",
+            "ZIP": "58201"
+        },
+        "GGW": {
+            "key": "GGW",
+            "City": "Glasgow",
+            "State": "MT",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.8
+                }
+            ],
+            "DisplayLocation": "Glasgow, MT",
+            "ZIP": "59230"
+        },
+        "GJT": {
+            "key": "GJT",
+            "City": "Grand Junction",
+            "State": "CO",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.7
+                }
+            ],
+            "DisplayLocation": "Grand Junction, CO",
+            "ZIP": "81501"
+        },
+        "GLD": {
+            "key": "GLD",
+            "City": "Goodland",
+            "State": "KS",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.9
+                }
+            ],
+            "DisplayLocation": "Goodland, KS",
+            "ZIP": "67735"
+        },
+        "GPT": {
+            "key": "GPT",
+            "City": "Gulfport",
+            "State": "MS",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.3
+                }
+            ],
+            "DisplayLocation": "Gulfport, MS",
+            "ZIP": "39501"
+        },
+        "GRB": {
+            "key": "GRB",
+            "City": "Green Bay",
+            "State": "WI",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.1
+                }
+            ],
+            "DisplayLocation": "Green Bay, WI",
+            "ZIP": "54301"
+        },
+        "GRI": {
+            "key": "GRI",
+            "City": "Grand Island",
+            "State": "NE",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.4
+                }
+            ],
+            "DisplayLocation": "Grand Island, NE",
+            "ZIP": "68801"
+        },
+        "GRR": {
+            "key": "GRR",
+            "City": "Grand Rapids",
+            "State": "MI",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.3
+                }
+            ],
+            "DisplayLocation": "Grand Rapids, MI",
+            "ZIP": "49501"
+        },
+        "GSO": {
+            "key": "GSO",
+            "City": "Greensboro",
+            "State": "NC",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.0
+                }
+            ],
+            "DisplayLocation": "Greensboro, NC",
+            "ZIP": "27408"
+        },
+        "GSP": {
+            "key": "GSP",
+            "City": "Greenville",
+            "State": "SC",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.9
+                }
+            ],
+            "DisplayLocation": "Greenville, SC",
+            "ZIP": "29601"
+        },
+        "GTB": {
+            "key": "GTB",
+            "City": "Fort Drum",
+            "State": "NY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.8
+                }
+            ],
+            "DisplayLocation": "Fort Drum, NY",
+            "ZIP": "13602"
+        },
+        "GTF": {
+            "key": "GTF",
+            "City": "Great Falls",
+            "State": "MT",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.8
+                }
+            ],
+            "DisplayLocation": "Great Falls, MT",
+            "ZIP": "59401"
+        },
+        "HON": {
+            "key": "HON",
+            "City": "Huron",
+            "State": "SD",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.3
+                }
+            ],
+            "DisplayLocation": "Huron, SD",
+            "ZIP": "57350"
+        },
+        "IAH": {
+            "key": "IAH",
+            "City": "Houston",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.8
+                }
+            ],
+            "DisplayLocation": "Houston, TX",
+            "ZIP": "77001"
+        },
+        "HSE": {
+            "key": "HSE",
+            "City": "Hatteras",
+            "State": "NC",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.1
+                }
+            ],
+            "DisplayLocation": "Hatteras, NC",
+            "ZIP": "27943"
+        },
+        "HSV": {
+            "key": "HSV",
+            "City": "Huntsville",
+            "State": "AL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.2
+                }
+            ],
+            "DisplayLocation": "Huntsville, AL",
+            "ZIP": "35801"
+        },
+        "HTL": {
+            "key": "HTL",
+            "City": "Houghton Lake",
+            "State": "MI",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.3
+                }
+            ],
+            "DisplayLocation": "Houghton Lake, MI",
+            "ZIP": "48629"
+        },
+        "HTS": {
+            "key": "HTS",
+            "City": "Huntington",
+            "State": "WV",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 1.7
+                }
+            ],
+            "DisplayLocation": "Huntington, WV",
+            "ZIP": "25701"
+        },
+        "IAD": {
+            "key": "IAD",
+            "City": "Wash/Dulles",
+            "State": "VA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.1
+                }
+            ],
+            "DisplayLocation": "Wash/Dulles, VA",
+            "ZIP": "20166"
+        },
+        "ICT": {
+            "key": "ICT",
+            "City": "Wichita",
+            "State": "KS",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.4
+                }
+            ],
+            "DisplayLocation": "Wichita, KS",
+            "ZIP": "67201"
+        },
+        "ICX": {
+            "key": "ICX",
+            "City": "Cedar City",
+            "State": "UT",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.5
+                }
+            ],
+            "DisplayLocation": "Cedar City, UT",
+            "ZIP": "84720"
+        },
+        "ILG": {
+            "key": "ILG",
+            "City": "Wilmington",
+            "State": "DE",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.3
+                }
+            ],
+            "DisplayLocation": "Wilmington, DE",
+            "ZIP": "19801"
+        },
+        "ILM": {
+            "key": "ILM",
+            "City": "Wilmington",
+            "State": "NC",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.6
+                }
+            ],
+            "DisplayLocation": "Wilmington, NC",
+            "ZIP": "28401"
+        },
+        "IND": {
+            "key": "IND",
+            "City": "Indianapolis",
+            "State": "IN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.9
+                }
+            ],
+            "DisplayLocation": "Indianapolis, IN",
+            "ZIP": "46201"
+        },
+        "INL": {
+            "key": "INL",
+            "City": "Int'L Falls",
+            "State": "MN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.3
+                }
+            ],
+            "DisplayLocation": "Int'l Falls, MN",
+            "ZIP": "56649"
+        },
+        "IPT": {
+            "key": "IPT",
+            "City": "Williamsport",
+            "State": "PA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.1
+                }
+            ],
+            "DisplayLocation": "Williamsport, PA",
+            "ZIP": "17701"
+        },
+        "ISN": {
+            "key": "ISN",
+            "City": "Williston",
+            "State": "ND",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.8
+                }
+            ],
+            "DisplayLocation": "Williston, ND",
+            "ZIP": "58801"
+        },
+        "JAN": {
+            "key": "JAN",
+            "City": "Jackson",
+            "State": "MS",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.6
+                }
+            ],
+            "DisplayLocation": "Jackson, MS",
+            "ZIP": "39201"
+        },
+        "JAX": {
+            "key": "JAX",
+            "City": "Jacksonville",
+            "State": "FL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.4
+                }
+            ],
+            "DisplayLocation": "Jacksonville, FL",
+            "ZIP": "32099"
+        },
+        "JHW": {
+            "key": "JHW",
+            "City": "Jamestown",
+            "State": "NY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.5
+                }
+            ],
+            "DisplayLocation": "Jamestown, NY",
+            "ZIP": "14701"
+        },
+        "JKL": {
+            "key": "JKL",
+            "City": "Jackson",
+            "State": "KY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.4
+                }
+            ],
+            "DisplayLocation": "Jackson, KY",
+            "ZIP": "41339"
+        },
+        "JMS": {
+            "key": "JMS",
+            "City": "Jamestown",
+            "State": "ND",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.6
+                }
+            ],
+            "DisplayLocation": "Jamestown, ND",
+            "ZIP": "58401"
+        },
+        "LAN": {
+            "key": "LAN",
+            "City": "Lansing",
+            "State": "MI",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.1
+                }
+            ],
+            "DisplayLocation": "Lansing, MI",
+            "ZIP": "48823"
+        },
+        "LAS": {
+            "key": "LAS",
+            "City": "Las Vegas",
+            "State": "NV",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.6
+                }
+            ],
+            "DisplayLocation": "Las Vegas, NV",
+            "ZIP": "89030"
+        },
+        "LAX": {
+            "key": "LAX",
+            "City": "Los Angeles",
+            "State": "CA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.9
+                }
+            ],
+            "DisplayLocation": "Los Angeles, CA",
+            "ZIP": "90001"
+        },
+        "LBB": {
+            "key": "LBB",
+            "City": "Lubbock",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.7
+                }
+            ],
+            "DisplayLocation": "Lubbock, TX",
+            "ZIP": "79401"
+        },
+        "LBF": {
+            "key": "LBF",
+            "City": "North Platte",
+            "State": "NE",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.2
+                }
+            ],
+            "DisplayLocation": "North Platte, NE",
+            "ZIP": "69101"
+        },
+        "LCH": {
+            "key": "LCH",
+            "City": "Lake Charles",
+            "State": "LA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.6
+                }
+            ],
+            "DisplayLocation": "Lake Charles, LA",
+            "ZIP": "70601"
+        },
+        "LEX": {
+            "key": "LEX",
+            "City": "Lexington",
+            "State": "KY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.3
+                }
+            ],
+            "DisplayLocation": "Lexington, KY",
+            "ZIP": "40501"
+        },
+        "LGA": {
+            "key": "LGA",
+            "City": "New York",
+            "State": "NY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.8
+                }
+            ],
+            "DisplayLocation": "New York, NY",
+            "ZIP": "10001"
+        },
+        "LIT": {
+            "key": "LIT",
+            "City": "Little Rock",
+            "State": "AR",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.9
+                }
+            ],
+            "DisplayLocation": "Little Rock, AR",
+            "ZIP": "72099"
+        },
+        "LND": {
+            "key": "LND",
+            "City": "Lander",
+            "State": "WY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.2
+                }
+            ],
+            "DisplayLocation": "Lander, WY",
+            "ZIP": "82520"
+        },
+        "LNK": {
+            "key": "LNK",
+            "City": "Lincoln",
+            "State": "NE",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.3
+                }
+            ],
+            "DisplayLocation": "Lincoln, NE",
+            "ZIP": "68501"
+        },
+        "LRD": {
+            "key": "LRD",
+            "City": "Laredo",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.1
+                }
+            ],
+            "DisplayLocation": "Laredo, TX",
+            "ZIP": "78040"
+        },
+        "LWS": {
+            "key": "LWS",
+            "City": "Lewiston",
+            "State": "ID",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.2
+                }
+            ],
+            "DisplayLocation": "Lewiston, ID",
+            "ZIP": "83501"
+        },
+        "LYH": {
+            "key": "LYH",
+            "City": "Lynchburg",
+            "State": "VA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.6
+                }
+            ],
+            "DisplayLocation": "Lynchburg, VA",
+            "ZIP": "24501"
+        },
+        "MAF": {
+            "key": "MAF",
+            "City": "Midland",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.7
+                }
+            ],
+            "DisplayLocation": "Midland, TX",
+            "ZIP": "79701"
+        },
+        "MBX": {
+            "key": "MBX",
+            "City": "Minot",
+            "State": "ND",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.6
+                }
+            ],
+            "DisplayLocation": "Minot, ND",
+            "ZIP": "58701"
+        },
+        "MCI": {
+            "key": "MCI",
+            "City": "Kansas City",
+            "State": "MO",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.6
+                }
+            ],
+            "DisplayLocation": "Kansas City, MO",
+            "ZIP": "64101"
+        },
+        "MCN": {
+            "key": "MCN",
+            "City": "Macon",
+            "State": "GA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.7
+                }
+            ],
+            "DisplayLocation": "Macon, GA",
+            "ZIP": "31201"
+        },
+        "MCO": {
+            "key": "MCO",
+            "City": "Orlando",
+            "State": "FL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.5
+                }
+            ],
+            "DisplayLocation": "Orlando, FL",
+            "ZIP": "32801"
+        },
+        "MEI": {
+            "key": "MEI",
+            "City": "Meridian",
+            "State": "MS",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.6
+                }
+            ],
+            "DisplayLocation": "Meridian, MS",
+            "ZIP": "39301"
+        },
+        "MEM": {
+            "key": "MEM",
+            "City": "Memphis",
+            "State": "TN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.7
+                }
+            ],
+            "DisplayLocation": "Memphis, TN",
+            "ZIP": "37501"
+        },
+        "MFD": {
+            "key": "MFD",
+            "City": "Mansfield",
+            "State": "OH",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 1.8
+                }
+            ],
+            "DisplayLocation": "Mansfield, OH",
+            "ZIP": "43358"
+        },
+        "MFR": {
+            "key": "MFR",
+            "City": "Medford",
+            "State": "OR",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.2
+                }
+            ],
+            "DisplayLocation": "Medford, OR",
+            "ZIP": "97501"
+        },
+        "MGM": {
+            "key": "MGM",
+            "City": "Montgomery",
+            "State": "AL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 0.6
+                }
+            ],
+            "DisplayLocation": "Montgomery, AL",
+            "ZIP": "36101"
+        },
+        "MIA": {
+            "key": "MIA",
+            "City": "Miami",
+            "State": "FL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 1.3
+                }
+            ],
+            "DisplayLocation": "Miami, FL",
+            "ZIP": "33101"
+        },
+        "MKE": {
+            "key": "MKE",
+            "City": "Milwaukee",
+            "State": "WI",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.6
+                }
+            ],
+            "DisplayLocation": "Milwaukee, WI",
+            "ZIP": "53172"
+        },
+        "MKG": {
+            "key": "MKG",
+            "City": "Muskegon",
+            "State": "MI",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.5
+                }
+            ],
+            "DisplayLocation": "Muskegon, MI",
+            "ZIP": "49440"
+        },
+        "MKL": {
+            "key": "MKL",
+            "City": "Jackson",
+            "State": "TN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.5
+                }
+            ],
+            "DisplayLocation": "Jackson, TN",
+            "ZIP": "38301"
+        },
+        "MLI": {
+            "key": "MLI",
+            "City": "Moline",
+            "State": "IL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.1
+                }
+            ],
+            "DisplayLocation": "Moline, IL",
+            "ZIP": "61244"
+        },
+        "MLS": {
+            "key": "MLS",
+            "City": "Miles City",
+            "State": "MT",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.9
+                }
+            ],
+            "DisplayLocation": "Miles City, MT",
+            "ZIP": "59301"
+        },
+        "MLU": {
+            "key": "MLU",
+            "City": "Monroe",
+            "State": "LA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.5
+                }
+            ],
+            "DisplayLocation": "Monroe, LA",
+            "ZIP": "71201"
+        },
+        "MON": {
+            "key": "MON",
+            "City": "Montpelier",
+            "State": "VT",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.3
+                }
+            ],
+            "DisplayLocation": "Montpelier, VT",
+            "ZIP": "05601"
+        },
+        "MSN": {
+            "key": "MSN",
+            "City": "Madison",
+            "State": "WI",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.5
+                }
+            ],
+            "DisplayLocation": "Madison, WI",
+            "ZIP": "53701"
+        },
+        "MSO": {
+            "key": "MSO",
+            "City": "Missoula",
+            "State": "MT",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.1
+                }
+            ],
+            "DisplayLocation": "Missoula, MT",
+            "ZIP": "59801"
+        },
+        "MSP": {
+            "key": "MSP",
+            "City": "Minneapolis",
+            "State": "MN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.0
+                }
+            ],
+            "DisplayLocation": "Minneapolis, MN",
+            "ZIP": "55400"
+        },
+        "MSY": {
+            "key": "MSY",
+            "City": "New Orleans",
+            "State": "LA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 0.6
+                }
+            ],
+            "DisplayLocation": "New Orleans, LA",
+            "ZIP": "70112"
+        },
+        "OFK": {
+            "key": "OFK",
+            "City": "Norfolk",
+            "State": "NE",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.1
+                }
+            ],
+            "DisplayLocation": "Norfolk, NE",
+            "ZIP": "68701"
+        },
+        "OKC": {
+            "key": "OKC",
+            "City": "Oklahoma City",
+            "State": "OK",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.5
+                }
+            ],
+            "DisplayLocation": "Oklahoma City, OK",
+            "ZIP": "73101"
+        },
+        "OLM": {
+            "key": "OLM",
+            "City": "Olympia",
+            "State": "WA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 0.6
+                }
+            ],
+            "DisplayLocation": "Olympia, WA",
+            "ZIP": "98501"
+        },
+        "OMA": {
+            "key": "OMA",
+            "City": "Omaha",
+            "State": "NE",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.4
+                }
+            ],
+            "DisplayLocation": "Omaha, NE",
+            "ZIP": "68101"
+        },
+        "ORD": {
+            "key": "ORD",
+            "City": "Chicago/O'Hare",
+            "State": "IL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.2
+                }
+            ],
+            "DisplayLocation": "Chicago/O'hare, IL",
+            "ZIP": "60666"
+        },
+        "ORF": {
+            "key": "ORF",
+            "City": "Norfolk",
+            "State": "VA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.1
+                }
+            ],
+            "DisplayLocation": "Norfolk, VA",
+            "ZIP": "23500"
+        },
+        "ORN": {
+            "key": "ORN",
+            "City": "Worcester",
+            "State": "MA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.8
+                }
+            ],
+            "DisplayLocation": "Worcester, MA",
+            "ZIP": "01601"
+        },
+        "PBI": {
+            "key": "PBI",
+            "City": "West Palm Beach",
+            "State": "FL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.6
+                }
+            ],
+            "DisplayLocation": "West Palm Beach, FL",
+            "ZIP": "33401"
+        },
+        "PDT": {
+            "key": "PDT",
+            "City": "Pendleton",
+            "State": "OR",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.5
+                }
+            ],
+            "DisplayLocation": "Pendleton, OR",
+            "ZIP": "97801"
+        },
+        "PDX": {
+            "key": "PDX",
+            "City": "Portland",
+            "State": "OR",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.6
+                }
+            ],
+            "DisplayLocation": "Portland, OR",
+            "ZIP": "97201"
+        },
+        "PHL": {
+            "key": "PHL",
+            "City": "Philadelphia",
+            "State": "PA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.8
+                }
+            ],
+            "DisplayLocation": "Philadelphia, PA",
+            "ZIP": "17959"
+        },
+        "PHX": {
+            "key": "PHX",
+            "City": "Phoenix",
+            "State": "AZ",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.3
+                }
+            ],
+            "DisplayLocation": "Phoenix, AZ",
+            "ZIP": "85001"
+        },
+        "PIA": {
+            "key": "PIA",
+            "City": "Peoria",
+            "State": "IL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.3
+                }
+            ],
+            "DisplayLocation": "Peoria, IL",
+            "ZIP": "61601"
+        },
+        "PIH": {
+            "key": "PIH",
+            "City": "Pocatello",
+            "State": "ID",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.6
+                }
+            ],
+            "DisplayLocation": "Pocatello, ID",
+            "ZIP": "83201"
+        },
+        "PIR": {
+            "key": "PIR",
+            "City": "Pierre",
+            "State": "SD",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.3
+                }
+            ],
+            "DisplayLocation": "Pierre, SD",
+            "ZIP": "57501"
+        },
+        "PIT": {
+            "key": "PIT",
+            "City": "Pittsburgh",
+            "State": "PA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.0
+                }
+            ],
+            "DisplayLocation": "Pittsburgh, PA",
+            "ZIP": "15112"
+        },
+        "PNS": {
+            "key": "PNS",
+            "City": "Pensacola",
+            "State": "FL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 1.7
+                }
+            ],
+            "DisplayLocation": "Pensacola, FL",
+            "ZIP": "32501"
+        },
+        "PRC": {
+            "key": "PRC",
+            "City": "Prescott",
+            "State": "AZ",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.7
+                }
+            ],
+            "DisplayLocation": "Prescott, AZ",
+            "ZIP": "86301"
+        },
+        "PUB": {
+            "key": "PUB",
+            "City": "Pueblo",
+            "State": "CO",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.4
+                }
+            ],
+            "DisplayLocation": "Pueblo, CO",
+            "ZIP": "81001"
+        },
+        "PUC": {
+            "key": "PUC",
+            "City": "Price",
+            "State": "UT",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.2
+                }
+            ],
+            "DisplayLocation": "Price, UT",
+            "ZIP": "84501"
+        },
+        "PVD": {
+            "key": "PVD",
+            "City": "Providence",
+            "State": "RI",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 9.3
+                }
+            ],
+            "DisplayLocation": "Providence, RI",
+            "ZIP": "02901"
+        },
+        "PWM": {
+            "key": "PWM",
+            "City": "Portland",
+            "State": "ME",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.9
+                }
+            ],
+            "DisplayLocation": "Portland, ME",
+            "ZIP": "04101"
+        },
+        "RAP": {
+            "key": "RAP",
+            "City": "Rapid City",
+            "State": "SD",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.0
+                }
+            ],
+            "DisplayLocation": "Rapid City, SD",
+            "ZIP": "57701"
+        },
+        "RDD": {
+            "key": "RDD",
+            "City": "Redding",
+            "State": "CA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.7
+                }
+            ],
+            "DisplayLocation": "Redding, CA",
+            "ZIP": "96001"
+        },
+        "RDU": {
+            "key": "RDU",
+            "City": "Raleigh",
+            "State": "NC",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.1
+                }
+            ],
+            "DisplayLocation": "Raleigh, NC",
+            "ZIP": "27601"
+        },
+        "RFD": {
+            "key": "RFD",
+            "City": "Rockford",
+            "State": "IL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.6
+                }
+            ],
+            "DisplayLocation": "Rockford, IL",
+            "ZIP": "61101"
+        },
+        "RIC": {
+            "key": "RIC",
+            "City": "Richmond",
+            "State": "VA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.0
+                }
+            ],
+            "DisplayLocation": "Richmond, VA",
+            "ZIP": "23173"
+        },
+        "RNO": {
+            "key": "RNO",
+            "City": "Reno",
+            "State": "NV",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.5
+                }
+            ],
+            "DisplayLocation": "Reno, NV",
+            "ZIP": "89501"
+        },
+        "ROA": {
+            "key": "ROA",
+            "City": "Roanoke",
+            "State": "VA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.3
+                }
+            ],
+            "DisplayLocation": "Roanoke, VA",
+            "ZIP": "24001"
+        },
+        "ROC": {
+            "key": "ROC",
+            "City": "Rochester",
+            "State": "NY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.4
+                }
+            ],
+            "DisplayLocation": "Rochester, NY",
+            "ZIP": "14445"
+        },
+        "ROW": {
+            "key": "ROW",
+            "City": "Roswell",
+            "State": "NM",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.0
+                }
+            ],
+            "DisplayLocation": "Roswell, NM",
+            "ZIP": "88201"
+        },
+        "RST": {
+            "key": "RST",
+            "City": "Rochester",
+            "State": "MN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.0
+                }
+            ],
+            "DisplayLocation": "Rochester, MN",
+            "ZIP": "55901"
+        },
+        "SAC": {
+            "key": "SAC",
+            "City": "Sacramento",
+            "State": "CA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.4
+                }
+            ],
+            "DisplayLocation": "Sacramento, CA",
+            "ZIP": "94203"
+        },
+        "SAF": {
+            "key": "SAF",
+            "City": "Santa Fe",
+            "State": "NM",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.4
+                }
+            ],
+            "DisplayLocation": "Santa Fe, NM",
+            "ZIP": "87501"
+        },
+        "SAN": {
+            "key": "SAN",
+            "City": "San Diego",
+            "State": "CA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.2
+                }
+            ],
+            "DisplayLocation": "San Diego, CA",
+            "ZIP": "92101"
+        },
+        "SAT": {
+            "key": "SAT",
+            "City": "San Antonio",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.6
+                }
+            ],
+            "DisplayLocation": "San Antonio, TX",
+            "ZIP": "78201"
+        },
+        "SAV": {
+            "key": "SAV",
+            "City": "Savannah",
+            "State": "GA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.8
+                }
+            ],
+            "DisplayLocation": "Savannah, GA",
+            "ZIP": "31401"
+        },
+        "SBA": {
+            "key": "SBA",
+            "City": "Santa Barbara",
+            "State": "CA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.4
+                }
+            ],
+            "DisplayLocation": "Santa Barbara, CA",
+            "ZIP": "93101"
+        },
+        "SBN": {
+            "key": "SBN",
+            "City": "South Bend",
+            "State": "IN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.7
+                }
+            ],
+            "DisplayLocation": "South Bend, IN",
+            "ZIP": "46601"
+        },
+        "SDF": {
+            "key": "SDF",
+            "City": "Louisville",
+            "State": "KY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.0
+                }
+            ],
+            "DisplayLocation": "Louisville, KY",
+            "ZIP": "40201"
+        },
+        "SEA": {
+            "key": "SEA",
+            "City": "Seattle-Tacoma",
+            "State": "WA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 0.7
+                }
+            ],
+            "DisplayLocation": "Seattle-Tacoma, WA",
+            "ZIP": "98158"
+        },
+        "SFO": {
+            "key": "SFO",
+            "City": "San Francisco",
+            "State": "CA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.5
+                }
+            ],
+            "DisplayLocation": "San Francisco, CA",
+            "ZIP": "94080"
+        },
+        "SGF": {
+            "key": "SGF",
+            "City": "Springfield",
+            "State": "MO",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.3
+                }
+            ],
+            "DisplayLocation": "Springfield, MO",
+            "ZIP": "65801"
+        },
+        "SHR": {
+            "key": "SHR",
+            "City": "Sheridan",
+            "State": "WY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.0
+                }
+            ],
+            "DisplayLocation": "Sheridan, WY",
+            "ZIP": "82801"
+        },
+        "SHV": {
+            "key": "SHV",
+            "City": "Shreveport",
+            "State": "LA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.5
+                }
+            ],
+            "DisplayLocation": "Shreveport, LA",
+            "ZIP": "71101"
+        },
+        "SJT": {
+            "key": "SJT",
+            "City": "San Angelo",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.7
+                }
+            ],
+            "DisplayLocation": "San Angelo, TX",
+            "ZIP": "76901"
+        },
+        "SLC": {
+            "key": "SLC",
+            "City": "Salt Lake City",
+            "State": "UT",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.0
+                }
+            ],
+            "DisplayLocation": "Salt Lake City, UT",
+            "ZIP": "84101"
+        },
+        "SLE": {
+            "key": "SLE",
+            "City": "Salem",
+            "State": "OR",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.1
+                }
+            ],
+            "DisplayLocation": "Salem, OR",
+            "ZIP": "97301"
+        },
+        "SPI": {
+            "key": "SPI",
+            "City": "Springfield",
+            "State": "IL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.2
+                }
+            ],
+            "DisplayLocation": "Springfield, IL",
+            "ZIP": "62701"
+        },
+        "SPS": {
+            "key": "SPS",
+            "City": "Wichita Falls",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.4
+                }
+            ],
+            "DisplayLocation": "Wichita Falls, TX",
+            "ZIP": "76301"
+        },
+        "STC": {
+            "key": "STC",
+            "City": "St. Cloud",
+            "State": "MN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.4
+                }
+            ],
+            "DisplayLocation": "St. Cloud, MN",
+            "ZIP": "56304"
+        },
+        "STL": {
+            "key": "STL",
+            "City": "St. Louis",
+            "State": "MO",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.4
+                }
+            ],
+            "DisplayLocation": "St. Louis, MO",
+            "ZIP": "63145"
+        },
+        "SUX": {
+            "key": "SUX",
+            "City": "Sioux City",
+            "State": "IA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.1
+                }
+            ],
+            "DisplayLocation": "Sioux City, IA",
+            "ZIP": "51101"
+        },
+        "SVC": {
+            "key": "SVC",
+            "City": "Silver City",
+            "State": "NM",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.6
+                }
+            ],
+            "DisplayLocation": "Silver City, NM",
+            "ZIP": "88061"
+        },
+        "SYR": {
+            "key": "SYR",
+            "City": "Syracuse",
+            "State": "NY",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 8.3
+                }
+            ],
+            "DisplayLocation": "Syracuse, NY",
+            "ZIP": "13057"
+        },
+        "TLH": {
+            "key": "TLH",
+            "City": "Tallahassee",
+            "State": "FL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.7
+                }
+            ],
+            "DisplayLocation": "Tallahassee, FL",
+            "ZIP": "32301"
+        },
+        "TOL": {
+            "key": "TOL",
+            "City": "Toledo",
+            "State": "OH",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.3
+                }
+            ],
+            "DisplayLocation": "Toledo, OH",
+            "ZIP": "43601"
+        },
+        "TOP": {
+            "key": "TOP",
+            "City": "Topeka",
+            "State": "KS",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 2.8
+                }
+            ],
+            "DisplayLocation": "Topeka, KS",
+            "ZIP": "66601"
+        },
+        "TPA": {
+            "key": "TPA",
+            "City": "Tampa",
+            "State": "FL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.0
+                }
+            ],
+            "DisplayLocation": "Tampa, FL",
+            "ZIP": "33601"
+        },
+        "TRI": {
+            "key": "TRI",
+            "City": "Bristol",
+            "State": "TN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.6
+                }
+            ],
+            "DisplayLocation": "Bristol, TN",
+            "ZIP": "37620"
+        },
+        "TUL": {
+            "key": "TUL",
+            "City": "Tulsa",
+            "State": "OK",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.6
+                }
+            ],
+            "DisplayLocation": "Tulsa, OK",
+            "ZIP": "74101"
+        },
+        "TUP": {
+            "key": "TUP",
+            "City": "Tupelo",
+            "State": "MS",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.7
+                }
+            ],
+            "DisplayLocation": "Tupelo, MS",
+            "ZIP": "38801"
+        },
+        "TUS": {
+            "key": "TUS",
+            "City": "Tucson",
+            "State": "AZ",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.2
+                }
+            ],
+            "DisplayLocation": "Tucson, AZ",
+            "ZIP": "85701"
+        },
+        "TVC": {
+            "key": "TVC",
+            "City": "Traverse City",
+            "State": "MI",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.5
+                }
+            ],
+            "DisplayLocation": "Traverse City, MI",
+            "ZIP": "49684"
+        },
+        "TYS": {
+            "key": "TYS",
+            "City": "Knoxville",
+            "State": "TN",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.0
+                }
+            ],
+            "DisplayLocation": "Knoxville, TN",
+            "ZIP": "37901"
+        },
+        "UIN": {
+            "key": "UIN",
+            "City": "Quincy",
+            "State": "IL",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 7.3
+                }
+            ],
+            "DisplayLocation": "Quincy, IL",
+            "ZIP": "62301"
+        },
+        "VCT": {
+            "key": "VCT",
+            "City": "Victoria",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.3
+                }
+            ],
+            "DisplayLocation": "Victoria, TX",
+            "ZIP": "77901"
+        },
+        "VTN": {
+            "key": "VTN",
+            "City": "Valentine",
+            "State": "NE",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.5
+                }
+            ],
+            "DisplayLocation": "Valentine, NE",
+            "ZIP": "69201"
+        },
+        "WMC": {
+            "key": "WMC",
+            "City": "Winnemucca",
+            "State": "NV",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.8
+                }
+            ],
+            "DisplayLocation": "Winnemucca, NV",
+            "ZIP": "89445"
+        },
+        "YKM": {
+            "key": "YKM",
+            "City": "Yakima",
+            "State": "WA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 4.7
+                }
+            ],
+            "DisplayLocation": "Yakima, WA",
+            "ZIP": "98901"
+        },
+        "YNG": {
+            "key": "YNG",
+            "City": "Youngstown",
+            "State": "OH",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 1.6
+                }
+            ],
+            "DisplayLocation": "Youngstown, OH",
+            "ZIP": "44501"
+        },
+        "YUM": {
+            "key": "YUM",
+            "City": "Yuma",
+            "State": "AZ",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 3.2
+                }
+            ],
+            "DisplayLocation": "Yuma, AZ",
+            "ZIP": "85364"
+        },
+        "ABE": {
+            "key": "ABE",
+            "City": "Allentown",
+            "State": "PA",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 6.4
+                }
+            ],
+            "DisplayLocation": "Allentown, PA",
+            "ZIP": "18101"
+        },
+        "ABI": {
+            "key": "ABI",
+            "City": "Abilene",
+            "State": "TX",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.0
+                }
+            ],
+            "DisplayLocation": "Abilene, TX",
+            "ZIP": "79601"
+        },
+        "ABQ": {
+            "key": "ABQ",
+            "City": "Albuquerque",
+            "State": "NM",
+            "periods": [
+                {
+                    "Period": "2024-06-02T05:30:33",
+                    "Type": "daily",
+                    "Index": 5.3
+                }
+            ],
+            "DisplayLocation": "Albuquerque, NM",
+            "ZIP": "87101"
+        }
+    }
+}
