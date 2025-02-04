@@ -65,8 +65,8 @@ def parse_args():
     )
     parser.add_argument(
         "--format",
-        choices=["gif", "frames"],
-        default="gif",
+        choices=["mp4", "gif", "jpeg", "png"],
+        default="mp4",
         help="output file format",
     )
 
@@ -252,20 +252,33 @@ def create_animation(
                 optimize=True,
                 quality=85,
             )
-        else:
+        elif save_format == "mp4":
+            anim = animation.FuncAnimation(
+                fig, update, frames=len(date_data), interval=1000 / fps
+            )
+            writer = animation.FFMpegWriter(fps=fps, bitrate=1800)
+            anim.save(f"{output_directory}/{base_filename}.mp4", writer=writer)
+        elif save_format == "png":
             # Save individual frames as PNG
             for frame_number in range(len(date_data)):
                 update(frame_number)
-                date = sorted(date_data.keys())[frame_number]
                 plt.savefig(
-                    f"{output_directory}/{base_filename}_frame_{date}.png",
+                    f"{output_directory}/frame_{frame_number:03d}.png",
                     dpi=dpi,
                     bbox_inches="tight",
                     pad_inches=0.1,
-                    # optimize=True,
-                    # PNG-specific optimization
-                    transparent=False,
-                    # compression=9,  # Maximum PNG compression
+                )
+        elif save_format == "jpeg":
+            # Save individual frames as JPEG
+            for frame_number in range(len(date_data)):
+                update(frame_number)
+                plt.savefig(
+                    f"{output_directory}/frame_{frame_number:03d}.jpeg",
+                    dpi=dpi,
+                    bbox_inches="tight",
+                    pad_inches=0.1,
+                    format="jpeg",
+                    # quality=95,
                 )
 
         plt.close()
