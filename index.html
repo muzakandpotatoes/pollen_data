@@ -141,7 +141,7 @@
             let frameCount = 0;
             while (true) {
                 const paddedNumber = String(frameCount).padStart(3, '0');
-                const exists = await imageExists(`frames/${version}/frame_${paddedNumber}.png`);
+                const exists = await imageExists(`webpage/frames/${version}/frame_${paddedNumber}.png`);
                 if (!exists) break;
                 frameCount++;
             }
@@ -158,7 +158,7 @@
                     slider.value = frameNumber;
                     resolve();
                 };
-                newImage.src = `frames/${currentVersion}/frame_${paddedNumber}.png`;
+                newImage.src = `webpage/frames/${currentVersion}/frame_${paddedNumber}.png`;
             });
         }
 
