@@ -9,6 +9,7 @@ import matplotlib.animation as animation
 import matplotlib.pyplot as plt
 import numpy as np
 from shapely.geometry import Point
+from tqdm import tqdm
 
 from analysis.utils import (
     create_interpolation_grid,
@@ -134,19 +135,8 @@ def create_animation(
     fps,
     save_format,
     output_directory,
-    size_preset="desktop",
-    dpi=72,
+    dpi=100,
 ):
-    """
-    Create animation with mobile-friendly output options.
-
-    Parameters:
-    -----------
-    size_preset : str
-        'responsive' - creates two sizes for different devices
-        'mobile' - optimized for mobile only
-        'desktop' - optimized for desktop only
-    """
     # Get basic components (moved back inside)
     lon_mesh, lat_mesh = create_interpolation_grid()
     url = (
@@ -186,7 +176,7 @@ def create_animation(
             vmin=0,
             vmax=10,
         )
-        plt.colorbar(mesh, ax=ax, label="Pollen Index")
+        plt.colorbar(mesh, ax=ax, label="Pollen Index", aspect=30, shrink=0.93)
 
         def update(frame_number):
             ax.clear()
@@ -270,7 +260,7 @@ def create_animation(
                 )
         elif save_format == "jpeg":
             # Save individual frames as JPEG
-            for frame_number in range(len(date_data)):
+            for frame_number in tqdm(range(len(date_data))):
                 update(frame_number)
                 plt.savefig(
                     f"{output_directory}/frame_{frame_number:03d}.jpeg",
@@ -278,22 +268,11 @@ def create_animation(
                     bbox_inches="tight",
                     pad_inches=0.1,
                     format="jpeg",
-                    # quality=95,
                 )
 
         plt.close()
 
-    # Set dimensions based on preset
-    if size_preset == "responsive":
-        # Create both mobile and desktop versions
-        mobile_size = (400, 300)  # Good size for most mobile devices
-        desktop_size = (800, 600)  # Good size for desktop/tablet
-        save_version(mobile_size)
-        save_version(desktop_size)
-    elif size_preset == "mobile":
-        save_version((400, 300))
-    else:  # desktop
-        save_version((800, 600))
+    save_version((900, 375))
 
 
 def main(args):

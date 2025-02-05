@@ -1,236 +1,220 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pollen Animation Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.1/plotly.min.js"></script>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
+            margin: 20px;
+            background: #f5f5f5;
         }
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            background-color: white;
+            background: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .version-select, .speed-control {
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .controls-grid {
+            columns: 4 300px;
+            column-gap: 20px;
+            margin: 20px 0;
+        }
+        .state-group {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            break-inside: avoid;
             margin-bottom: 20px;
         }
-        .radio-group {
-            display: flex;
-            gap: 20px;
+        .state-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #495057;
+            font-size: 1.1em;
         }
-        .radio-label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-        }
-        .controls {
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .slider-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .speed-slider-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .speed-labels {
-            display: flex;
-            justify-content: space-between;
+        .locations-table {
+            display: table;
             width: 100%;
-            margin-top: 4px;
-            font-size: 14px;
+            border-collapse: collapse;
+        }
+        .header-row {
+            display: table-row;
+            font-weight: 500;
             color: #666;
         }
-        #slider, #speedSlider {
-            flex-grow: 1;
+        .header-cell {
+            display: table-cell;
+            padding: 5px 10px;
+            text-align: center;
         }
-        #playButton {
-            padding: 8px 16px;
-            border: none;
-            background-color: #f0f0f0;
-            border-radius: 4px;
-            cursor: pointer;
+        .header-cell:first-child {
+            width: 60%;
+            text-align: left;
         }
-        #playButton:hover {
-            background-color: #e0e0e0;
+        .location-row {
+            display: table-row;
         }
-        img {
-            width: 100%;
-            border-radius: 4px;
-            background-color: black;
+        .location-row:hover {
+            background: #e9ecef;
+        }
+        .location-cell {
+            display: table-cell;
+            padding: 5px 10px;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .location-cell:first-child {
+            text-align: left;
+        }
+        input[type="checkbox"] {
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="version-select">
-            <div class="radio-group">
-                <label class="radio-label">
-                    <input type="radio" name="version" value="raw">
-                    Raw Data
-                </label>
-                <label class="radio-label">
-                    <input type="radio" name="version" value="lowess" checked>
-                    LOWESS Smoothed
-                </label>
-            </div>
-        </div>
-
-        <div class="speed-control">
-            <div class="speed-slider-container">
-                <input type="range" id="speedSlider" min="10" max="300" value="100" step="1">
-            </div>
-            <div class="speed-labels">
-                <span>Fast</span>
-                <span>Slow</span>
-            </div>
-        </div>
-
-        <img id="frame" alt="Current frame">
-        
-        <div class="controls">
-            <button id="playButton">Play</button>
-            <input type="range" id="slider" min="0" value="0">
-        </div>
+        <h1 class="title">Pollen Index Trends</h1>
+        <p class="subtitle">Track pollen levels across different locations in the United States</p>
+        <div id="plot"></div>
+        <div class="controls-grid" id="checkboxes"></div>
     </div>
 
     <script>
-        // Configuration and helper functions
-        function convertSliderToFrameRate(sliderValue) {
-            return Math.round(Math.exp(Math.log(10) + (Math.log(300) - Math.log(10)) * (sliderValue - 10) / (300 - 10)));
-        }
-        let frameRate = convertSliderToFrameRate(100);  // Convert default value through same scaling
-
-        // Elements
-        const frame = document.getElementById('frame');
-        const slider = document.getElementById('slider');
-        const playButton = document.getElementById('playButton');
-        const versionInputs = document.getElementsByName('version');
-        const speedSlider = document.getElementById('speedSlider');
-
-        // State
-        let currentFrame = 0;
-        let isPlaying = false;
-        let intervalId = null;
-        let currentVersion = 'lowess';
-        let totalFrames = 0;
-
-        function imageExists(url) {
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.onload = () => resolve(true);
-                img.onerror = () => resolve(false);
-                img.src = url;
-            });
-        }
-
-        async function countFrames(version) {
-            let frameCount = 0;
-            while (true) {
-                const paddedNumber = String(frameCount).padStart(3, '0');
-                const exists = await imageExists(`webpage/frames/${version}/frame_${paddedNumber}.jpeg`);
-                if (!exists) break;
-                frameCount++;
-            }
-            console.log(`Found ${frameCount} frames for ${version}`);
-            return frameCount;
-        }
-
-        function loadFrame(frameNumber) {
-            return new Promise((resolve) => {
-                const paddedNumber = String(frameNumber).padStart(3, '0');
-                const newImage = new Image();
-                newImage.onload = () => {
-                    frame.src = newImage.src;
-                    slider.value = frameNumber;
-                    resolve();
-                };
-                newImage.src = `webpage/frames/${currentVersion}/frame_${paddedNumber}.jpeg`;
-            });
-        }
-
-        function togglePlay() {
-            isPlaying = !isPlaying;
-            playButton.textContent = isPlaying ? 'Pause' : 'Play';
-
-            if (isPlaying) {
-                intervalId = setInterval(() => {
-                    currentFrame = (currentFrame + 1) % totalFrames;
-                    loadFrame(currentFrame);
-                }, frameRate);
-            } else {
-                clearInterval(intervalId);
-            }
-        }
-
-        async function initialize() {
-            totalFrames = await countFrames(currentVersion);
-            slider.max = totalFrames - 1;
-            await loadFrame(0);
-            console.log('Initialized with', totalFrames, 'frames');
-        }
-
-        playButton.addEventListener('click', togglePlay);
-
-        slider.addEventListener('input', (e) => {
-            currentFrame = parseInt(e.target.value);
-            loadFrame(currentFrame);
-            if (isPlaying) {
-                togglePlay();
-            }
-        });
-
-        versionInputs.forEach(input => {
-            input.addEventListener('change', async (e) => {
-                currentVersion = e.target.value;
-                const wasPlaying = isPlaying;
-                if (isPlaying) {
-                    clearInterval(intervalId);
-                }
-                
-                totalFrames = await countFrames(currentVersion);
-                slider.max = totalFrames - 1;
-                currentFrame = Math.min(currentFrame, totalFrames - 1);
-                await loadFrame(currentFrame);
-                
-                if (wasPlaying) {
-                    intervalId = setInterval(() => {
-                        currentFrame = (currentFrame + 1) % totalFrames;
-                        loadFrame(currentFrame);
-                    }, frameRate);
-                }
-            });
-        });
-
-        // Add speed slider handling
-        speedSlider.addEventListener('input', (e) => {
-            const sliderValue = parseInt(e.target.value);
-            frameRate = convertSliderToFrameRate(sliderValue);
+        async function loadData() {
+            const response = await fetch('data/collated.csv');
+            const csvText = await response.text();
             
-            // If currently playing, restart the interval with new frame rate
-            if (isPlaying) {
-                clearInterval(intervalId);
-                intervalId = setInterval(() => {
-                    currentFrame = (currentFrame + 1) % totalFrames;
-                    loadFrame(currentFrame);
-                }, frameRate);
+            const results = Papa.parse(csvText, {
+                header: true,
+                dynamicTyping: true,
+                skipEmptyLines: true
+            });
+            
+            const headers = results.meta.fields.filter(h => h !== 'date');
+            const locationMap = new Map();
+            
+            headers.filter(h => h.includes('(raw)')).forEach(header => {
+                const location = header.replace(' (raw)', '');
+                const state = location.match(/ (New Hampshire|New Jersey|New Mexico|New York|North Carolina|North Dakota|Rhode Island|South Carolina|South Dakota|West Virginia|District of Columbia|[A-Z][a-z]+)$/)[1];
+                
+                if (!locationMap.has(state)) {
+                    locationMap.set(state, new Set());
+                }
+                locationMap.get(state).add(location);
+            });
+            
+            Array.from(locationMap.entries()).sort().forEach(([state, locations]) => {
+                const stateDiv = document.createElement('div');
+                stateDiv.className = 'state-group';
+                
+                const stateTitle = document.createElement('div');
+                stateTitle.className = 'state-title';
+                stateTitle.textContent = state;
+                stateDiv.appendChild(stateTitle);
+                
+                const table = document.createElement('div');
+                table.className = 'locations-table';
+                
+                // Header row
+                const headerRow = document.createElement('div');
+                headerRow.className = 'header-row';
+                headerRow.innerHTML = `
+                    <div class="header-cell">City</div>
+                    <div class="header-cell">Raw</div>
+                    <div class="header-cell">Smoothed</div>
+                `;
+                table.appendChild(headerRow);
+                
+                Array.from(locations).sort().forEach(loc => {
+                    const row = document.createElement('div');
+                    row.className = 'location-row';
+                    
+                    const cityCell = document.createElement('div');
+                    cityCell.className = 'location-cell';
+                    cityCell.textContent = loc.replace(new RegExp(` ${state}$`), '');
+                    
+                    const rawCell = document.createElement('div');
+                    rawCell.className = 'location-cell';
+                    const rawCheckbox = document.createElement('input');
+                    rawCheckbox.type = 'checkbox';
+                    rawCheckbox.id = `${loc} (raw)`;
+                    rawCheckbox.onchange = updatePlot;
+                    rawCell.appendChild(rawCheckbox);
+                    
+                    const smoothedCell = document.createElement('div');
+                    smoothedCell.className = 'location-cell';
+                    const smoothedCheckbox = document.createElement('input');
+                    smoothedCheckbox.type = 'checkbox';
+                    smoothedCheckbox.id = `${loc} (smoothed)`;
+                    smoothedCheckbox.onchange = updatePlot;
+                    smoothedCell.appendChild(smoothedCheckbox);
+                    
+                    row.appendChild(cityCell);
+                    row.appendChild(rawCell);
+                    row.appendChild(smoothedCell);
+                    table.appendChild(row);
+                });
+                
+                stateDiv.appendChild(table);
+                document.getElementById('checkboxes').appendChild(stateDiv);
+            });
+            
+            window.data = results.data;
+            
+            const firstCheckbox = document.querySelector('input[type="checkbox"]');
+            if (firstCheckbox) {
+                firstCheckbox.checked = true;
+                updatePlot();
             }
-        });
-
-        window.addEventListener('load', initialize);
+        }
+        
+        function updatePlot() {
+            const traces = Array.from(document.querySelectorAll('input:checked')).map(cb => ({
+                x: window.data.map(row => row.date),
+                y: window.data.map(row => row[cb.id]),
+                name: `${cb.id.replace(' (raw)', '').replace(' (smoothed)', '')} ${cb.id.includes('smoothed') ? '(smoothed)' : ''}`,
+                line: {
+                    dash: cb.id.includes('smoothed') ? 'dot' : 'solid'
+                }
+            }));
+            
+            Plotly.newPlot('plot', traces, {
+                margin: { t: 40, r: 40, b: 40, l: 40 },
+                hovermode: 'x unified',
+                showlegend: true,
+                legend: {
+                    orientation: 'h',
+                    y: -0.2
+                },
+                xaxis: {
+                    title: 'Date',
+                    showgrid: true,
+                    gridcolor: '#f0f0f0'
+                },
+                yaxis: {
+                    title: 'Pollen Index',
+                    showgrid: true,
+                    gridcolor: '#f0f0f0'
+                },
+                plot_bgcolor: 'white',
+                paper_bgcolor: 'white',
+            });
+        }
+        
+        loadData();
     </script>
 </body>
 </html>

@@ -14,3 +14,4 @@ geopandas
 geopy
 cartopy
 Pillow
+tqdm

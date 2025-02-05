@@ -5,6 +5,7 @@ animations
 s3_data
 scratch
 .env
+temp
 
 *.pkl
 *.zip

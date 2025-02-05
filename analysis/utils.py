@@ -380,7 +380,7 @@ def create_interpolation_grid():
     lat_min, lat_max = 24, 50
 
     # Create grid with 0.5 degree resolution
-    grid_resolution = 0.5
+    grid_resolution = 0.15
     lon_grid = np.arange(lon_min, lon_max, grid_resolution)
     lat_grid = np.arange(lat_min, lat_max, grid_resolution)
 
