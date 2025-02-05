@@ -1,0 +1,197 @@
+{
+    "dailyInfo": [
+        {
+            "date": {
+                "day": 5,
+                "month": 2,
+                "year": 2025
+            },
+            "plantInfo": [
+                {
+                    "code": "MAPLE",
+                    "displayName": "Maple"
+                },
+                {
+                    "code": "ELM",
+                    "displayName": "Elm",
+                    "inSeason": true,
+                    "indexInfo": {
+                        "category": "Very Low",
+                        "code": "UPI",
+                        "color": {
+                            "blue": 0.22745098,
+                            "green": 0.61960787
+                        },
+                        "displayName": "Universal Pollen 'Index",
+                        "indexDescription": "People with 'very high 'allergy to 'pollen are 'likely to 'experience 'symptoms",
+                        "value": 1
+                    },
+                    "plantDescription": {
+                        "crossReaction": "There is 'no known 'cross-allergies 'related 'to elm.",
+                        "family": "Ulmaceae (the 'Elm family)",
+                        "picture": "https://storage.googleapis.com/pollen-pictures/elm_full.jpg",
+                        "pictureCloseup": "https://storage.googleapis.com/pollen-pictures/elm_closeup.jpg",
+                        "season": "Two distinct 'seasons, late 'winter to early 'spring, and 'late summer to 'fall (species 'dependent)",
+                        "specialColors": "None",
+                        "specialShapes": "The 'leaves 'are 'alternate, 'obovate 'with a 'pointed 'tip, 'usually 'a 'lopsided 'base, 'and 'serrated 'margins.",
+                        "type": "TREE"
+                    }
+                },
+                {
+                    "code": "COTTONWOOD",
+                    "displayName": "Cottonwood"
+                },
+                {
+                    "code": "ALDER",
+                    "displayName": "Alder",
+                    "inSeason": true,
+                    "indexInfo": {
+                        "category": "None",
+                        "code": "UPI",
+                        "color": {},
+                        "displayName": "Universal Pollen 'Index",
+                        "indexDescription": "Pollen 'levels are 'very low and 'are not 'likely to 'trigger 'allergic 'reactions",
+                        "value": 0
+                    },
+                    "plantDescription": {
+                        "crossReaction": "Birch, 'Hazel, 'Hornbeam, 'Beech, 'Willow 'and Oak 'pollen.",
+                        "family": "Betulaceae (the 'Birch family)",
+                        "picture": "https://storage.googleapis.com/pollen-pictures/alder_full.jpg",
+                        "pictureCloseup": "https://storage.googleapis.com/pollen-pictures/alder_closeup.jpg",
+                        "season": "Late winter, 'early spring",
+                        "specialColors": "In the 'autumn, 'the 'leaves 'tend to 'turn 'brown.",
+                        "specialShapes": "The 'trees 'grow 'catkins, 'which 'are 'clusters 'of 'flowers 'without 'petals.",
+                        "type": "TREE"
+                    }
+                },
+                {
+                    "code": "BIRCH",
+                    "displayName": "Birch"
+                },
+                {
+                    "code": "ASH",
+                    "displayName": "Ash",
+                    "inSeason": false,
+                    "indexInfo": {
+                        "category": "Very Low",
+                        "code": "UPI",
+                        "color": {
+                            "blue": 0.22745098,
+                            "green": 0.61960787
+                        },
+                        "displayName": "Universal Pollen 'Index",
+                        "indexDescription": "People with 'very high 'allergy to 'pollen are 'likely to 'experience 'symptoms",
+                        "value": 1
+                    },
+                    "plantDescription": {
+                        "crossReaction": "Olive 'and 'Privet 'pollen.",
+                        "family": "Oleaceae (the 'Olive family)",
+                        "picture": "https://storage.googleapis.com/pollen-pictures/ash_full.jpg",
+                        "pictureCloseup": "https://storage.googleapis.com/pollen-pictures/ash_closeup.jpg",
+                        "season": "Late winter, 'spring",
+                        "specialColors": "Yellowish-green 'leaves.",
+                        "specialShapes": "The 'leaves 'are 'usually 'opposite 'and 'pinnately 'compound 'with an 'odd 'number 'of 'leaflets. 'Ash 'trees 'produce '`helicopter 'seeds`.",
+                        "type": "TREE"
+                    }
+                },
+                {
+                    "code": "PINE",
+                    "displayName": "Pine"
+                },
+                {
+                    "code": "OAK",
+                    "displayName": "Oak",
+                    "inSeason": false,
+                    "indexInfo": {
+                        "category": "Very Low",
+                        "code": "UPI",
+                        "color": {
+                            "blue": 0.22745098,
+                            "green": 0.61960787
+                        },
+                        "displayName": "Universal Pollen 'Index",
+                        "indexDescription": "People with 'very high 'allergy to 'pollen are 'likely to 'experience 'symptoms",
+                        "value": 1
+                    },
+                    "plantDescription": {
+                        "crossReaction": "Alder, 'Birch, 'Hazel, 'Hornbeam, 'and 'Beech 'pollen.",
+                        "family": "Fagaceae (the 'Beech family)",
+                        "picture": "https://storage.googleapis.com/pollen-pictures/oak_full.jpg",
+                        "pictureCloseup": "https://storage.googleapis.com/pollen-pictures/oak_closeup.jpg",
+                        "season": "Spring",
+                        "specialColors": "The bark 'color of 'oaks 'ranges 'from 'whitish-gray 'to dark, 'almost 'black.",
+                        "specialShapes": "The 'leaves 'are 'alternate 'and 'usually 'lobed 'with 'smooth 'or spiny 'margins. 'The 'fruits 'are 'acorns, 'oval-shaped 'seeds in 'a cupped 'structure 'named 'cupule.",
+                        "type": "TREE"
+                    }
+                },
+                {
+                    "code": "JUNIPER",
+                    "displayName": "Juniper",
+                    "inSeason": true,
+                    "indexInfo": {
+                        "category": "High",
+                        "code": "UPI",
+                        "color": {
+                            "green": 0.54901963,
+                            "red": 1
+                        },
+                        "displayName": "Universal Pollen 'Index",
+                        "indexDescription": "Many people 'with allergy 'to pollen 'are likely 'to 'experience 'symptoms. 'Very 'sensitive 'people may 'experience 'severe 'symptoms",
+                        "value": 4
+                    },
+                    "plantDescription": {
+                        "crossReaction": "Cedar 'and 'Cypress 'pollen. 'In 'addition, 'there 'may be a 'higher 'risk of 'food 'allergy 'to 'peach.",
+                        "family": "Cupressaceae '(the Cypress 'family)",
+                        "picture": "https://storage.googleapis.com/pollen-pictures/juniper_full.jpg",
+                        "pictureCloseup": "https://storage.googleapis.com/pollen-pictures/juniper_closeup.jpg",
+                        "season": "Early winter to 'late spring '(most species)",
+                        "specialColors": "The bark 'is 'reddish-brown.",
+                        "specialShapes": "The 'leaves 'can 'appear 'as two 'types of 'needles; 'small 'sharp 'needles 'arranged 'in 'opposite 'pairs or 'whorls 'and 'scaly 'leaves. 'The 'cones 'look 'like 'berries.",
+                        "type": "TREE"
+                    }
+                },
+                {
+                    "code": "GRAMINALES",
+                    "displayName": "Grasses"
+                },
+                {
+                    "code": "RAGWEED",
+                    "displayName": "Ragweed"
+                }
+            ],
+            "pollenTypeInfo": [
+                {
+                    "code": "GRASS",
+                    "displayName": "Grass"
+                },
+                {
+                    "code": "TREE",
+                    "displayName": "Tree",
+                    "healthRecommendations": [
+                        "Avoid mowing 'the lawn and 'raking leaves.",
+                        "When driving 'the car, close 'your windows 'and turn the 'air 'conditioning 'system to 'recirculation 'mode.",
+                        "Keep your 'windows closed 'and turn on 'your air 'purifier or air 'conditioning.",
+                        "Consider 'staying indoors 'during the peak 'pollen hours '(morning and 'early 'afternoon)."
+                    ],
+                    "inSeason": true,
+                    "indexInfo": {
+                        "category": "High",
+                        "code": "UPI",
+                        "color": {
+                            "green": 0.54901963,
+                            "red": 1
+                        },
+                        "displayName": "Universal 'Pollen Index",
+                        "indexDescription": "Many 'people 'with 'allergy 'to 'pollen 'are 'likely 'to 'experience 'symptoms. 'Very 'sensitive 'people 'may 'experience 'severe 'symptoms",
+                        "value": 4
+                    }
+                },
+                {
+                    "code": "WEED",
+                    "displayName": "Weed"
+                }
+            ]
+        }
+    ],
+    "regionCode": "US"
+}
