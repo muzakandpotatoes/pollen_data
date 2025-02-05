@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.1/plotly.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -29,6 +30,79 @@
             margin-bottom: 16px;
             font-size: 0.9em;
         }
+        .data-type-toggles {
+            display: flex;
+            gap: 16px;
+            margin: 12px 0;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .data-type-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+        .data-type-toggle:hover {
+            color: #1a73e8;
+        }
+        .selected-panel {
+            background: #f8f9fa;
+            margin: 8px 0;
+            padding: 6px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .selected-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        .selected-title {
+            font-weight: 500;
+            color: #495057;
+        }
+        .clear-all {
+            font-size: 0.9em;
+            color: #dc3545;
+            cursor: pointer;
+            padding: 2px 6px;
+            border-radius: 3px;
+            border: none;
+            background: none;
+        }
+        .clear-all:hover {
+            background: #ffe5e8;
+        }
+        .selected-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .selected-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            border: 1px solid #dee2e6;
+        }
+        .remove-item {
+            color: #dc3545;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            padding: 0 2px;
+            margin-left: 4px;
+        }
+        .remove-item:hover {
+            background: #ffe5e8;
+            border-radius: 2px;
+        }
         .controls-grid {
             columns: 4 250px;
             column-gap: 12px;
@@ -53,38 +127,81 @@
             border-collapse: collapse;
             font-size: 0.9em;
         }
-        .header-row {
-            display: table-row;
-            font-weight: 500;
-            color: #666;
-        }
-        .header-cell {
-            display: table-cell;
-            padding: 3px 6px;
-            text-align: center;
-        }
-        .header-cell:first-child {
-            width: 60%;
-            text-align: left;
-        }
         .location-row {
             display: table-row;
+            cursor: pointer;
         }
         .location-row:hover {
-            background: #e9ecef;
+            background: #f1f3f5;
+        }
+        .location-row.selected {
+            background: #e3f2fd;
+            color: #1a73e8;
+        }
+        .location-row.selected:hover {
+            background: #d0e8fc;
         }
         .location-cell {
             display: table-cell;
-            padding: 3px 6px;
-            vertical-align: middle;
-            text-align: center;
+            padding: 6px 8px;
+            border-radius: 3px;
         }
-        .location-cell:first-child {
-            text-align: left;
+        .search-container {
+            margin: 8px 0;
+            position: relative;
         }
-        input[type="checkbox"] {
-            margin: 0;
-            transform: scale(0.9);
+        .search-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            font-size: 0.9em;
+            box-sizing: border-box;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: #adb5bd;
+            box-shadow: 0 0 0 2px rgba(173,181,189,0.25);
+        }
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            margin-top: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+        }
+        .search-result-item {
+            padding: 6px 8px;
+            cursor: pointer;
+        }
+        .search-result-item:hover {
+            background: #f1f3f5;
+        }
+        .search-result-item.selected {
+            background: #e3f2fd;
+            color: #1a73e8;
+        }
+        .search-result-item.selected:hover {
+            background: #d0e8fc;
+        }
+        .search-result-item.highlighted {
+            background-color: #edf2ff;
+            border-left: 3px solid #1a73e8;
+            margin-left: -3px;  /* Prevent content shift from border */
+            font-weight: 500;
+        }
+        .search-result-state {
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-left: 4px;
         }
         @media (max-width: 600px) {
             body {
@@ -94,18 +211,31 @@
                 padding: 8px;
             }
             .controls-grid {
-                columns: 2 160px;
-                column-gap: 8px;
+                columns: 1;
             }
             .state-group {
                 padding: 6px;
                 margin-bottom: 8px;
+                min-width: 0;
             }
             .locations-table {
                 font-size: 0.85em;
+                table-layout: fixed;
             }
             .location-cell {
-                padding: 2px 4px;
+                padding: 4px 6px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .search-input {
+                font-size: 16px; /* Prevents iOS zoom */
+                padding: 6px;
+            }
+            .data-type-toggles {
+                font-size: 0.85em;
+                padding: 6px;
+                gap: 12px;
             }
         }
     </style>
@@ -115,10 +245,79 @@
         <h1 class="title">Pollen Index Trends</h1>
         <p class="subtitle">Track pollen levels across different locations in the United States</p>
         <div id="plot"></div>
+        <div class="data-type-toggles">
+            <label class="data-type-toggle">
+                <input type="checkbox" id="showRaw" checked> Show Raw Data
+            </label>
+            <label class="data-type-toggle">
+                <input type="checkbox" id="showSmoothed" checked> Show Smoothed Data
+            </label>
+        </div>
+        <div class="selected-panel">
+            <div class="selected-header">
+                <div class="selected-title">Selected Locations</div>
+                <button class="clear-all" onclick="clearAllLocations()">Clear All</button>
+            </div>
+            <div class="selected-items" id="selectedItems"></div>
+        </div>
+        <div class="search-container">
+            <input type="text" 
+                   class="search-input" 
+                   placeholder="Search locations (e.g., 'San Francisco', 'NYC')"
+                   autocomplete="off"
+                   id="locationSearch">
+            <div class="search-results" id="searchResults"></div>
+        </div>
         <div class="controls-grid" id="checkboxes"></div>
     </div>
 
     <script>
+        let fuse;
+        let locationList = [];
+        let selectedLocations = new Set([
+            "South San Francisco California",
+            "New York New York"
+        ]);
+        let currentHighlight = -1;
+        let currentResults = [];
+
+        function updateSelectedPanel() {
+            const selectedItemsDiv = document.getElementById('selectedItems');
+            selectedItemsDiv.innerHTML = '';
+            
+            selectedLocations.forEach(location => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'selected-item';
+                
+                // Extract city and state
+                const match = location.match(/^(.+) ([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)$/);
+                const city = match[1];
+                const state = match[2];
+                
+                itemDiv.innerHTML = `
+                    ${city}
+                    <span style="color: #6c757d; font-size: 0.9em;">${state}</span>
+                    <span class="remove-item" onclick="event.stopPropagation(); removeLocation('${location}')">&times;</span>
+                `;
+                
+                selectedItemsDiv.appendChild(itemDiv);
+            });
+        }
+
+        function removeLocation(location) {
+            selectedLocations.delete(location);
+            updateLocationStyles();
+            updateSelectedPanel();
+            updatePlot();
+        }
+
+        function clearAllLocations() {
+            selectedLocations.clear();
+            updateLocationStyles();
+            updateSelectedPanel();
+            updatePlot();
+        }
+
         async function loadData() {
             const response = await fetch('data/collated.csv');
             const csvText = await response.text();
@@ -140,6 +339,115 @@
                     locationMap.set(state, new Set());
                 }
                 locationMap.get(state).add(location);
+
+                locationList.push({
+                    fullName: location,
+                    city: location.replace(new RegExp(` ${state}$`), ''),
+                    state: state
+                });
+            });
+            
+            // Initialize Fuse.js for fuzzy search
+            fuse = new Fuse(locationList, {
+                keys: ['city', 'state', 'fullName'],
+                threshold: 0.3,
+                distance: 100,
+                ignoreLocation: true
+            });
+
+            // Set up search functionality
+            const searchInput = document.getElementById('locationSearch');
+            const searchResults = document.getElementById('searchResults');
+
+            function toggleLocation(location) {
+                if (selectedLocations.has(location.fullName)) {
+                    selectedLocations.delete(location.fullName);
+                } else {
+                    selectedLocations.add(location.fullName);
+                }
+                updateLocationStyles();
+                updateSelectedPanel();
+                updatePlot();
+                clearSearch();
+            }
+
+            function clearSearch() {
+                searchInput.value = '';
+                searchResults.style.display = 'none';
+                currentResults = [];
+                currentHighlight = -1;
+            }
+
+            function updateHighlight() {
+                const items = searchResults.querySelectorAll('.search-result-item');
+                items.forEach((item, index) => {
+                    item.classList.toggle('highlighted', index === currentHighlight);
+                });
+            }
+
+            searchInput.addEventListener('keydown', (e) => {
+                if (!currentResults.length) return;
+
+                switch (e.key) {
+                    case 'ArrowDown':
+                        e.preventDefault();
+                        currentHighlight = (currentHighlight + 1) % currentResults.length;
+                        updateHighlight();
+                        break;
+                    case 'ArrowUp':
+                        e.preventDefault();
+                        currentHighlight = currentHighlight <= 0 ? currentResults.length - 1 : currentHighlight - 1;
+                        updateHighlight();
+                        break;
+                    case 'Enter':
+                        e.preventDefault();
+                        if (currentHighlight >= 0) {
+                            toggleLocation(currentResults[currentHighlight].item);
+                        }
+                        break;
+                    case 'Escape':
+                        searchResults.style.display = 'none';
+                        searchInput.blur();
+                        break;
+                }
+            });
+
+            searchInput.addEventListener('input', (e) => {
+                currentHighlight = -1;
+                if (e.target.value.length < 2) {
+                    searchResults.style.display = 'none';
+                    currentResults = [];
+                    return;
+                }
+
+                currentResults = fuse.search(e.target.value);
+                searchResults.innerHTML = '';
+                
+                currentResults.slice(0, 10).forEach(result => {
+                    const div = document.createElement('div');
+                    div.className = 'search-result-item';
+                    if (selectedLocations.has(result.item.fullName)) {
+                        div.classList.add('selected');
+                    }
+                    
+                    const location = result.item;
+                    div.innerHTML = `
+                        ${location.city}
+                        <span class="search-result-state">${location.state}</span>
+                    `;
+
+                    div.addEventListener('click', () => toggleLocation(location));
+                    searchResults.appendChild(div);
+                });
+                
+                searchResults.style.display = currentResults.length ? 'block' : 'none';
+            });
+
+            // Hide search results when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.search-container')) {
+                    searchResults.style.display = 'none';
+                }
             });
             
             Array.from(locationMap.entries()).sort().forEach(([state, locations]) => {
@@ -154,42 +462,22 @@
                 const table = document.createElement('div');
                 table.className = 'locations-table';
                 
-                const headerRow = document.createElement('div');
-                headerRow.className = 'header-row';
-                headerRow.innerHTML = `
-                    <div class="header-cell">City</div>
-                    <div class="header-cell">Raw</div>
-                    <div class="header-cell">Smoothed</div>
-                `;
-                table.appendChild(headerRow);
-                
                 Array.from(locations).sort().forEach(loc => {
                     const row = document.createElement('div');
                     row.className = 'location-row';
+                    if (selectedLocations.has(loc)) {
+                        row.classList.add('selected');
+                    }
                     
                     const cityCell = document.createElement('div');
                     cityCell.className = 'location-cell';
                     cityCell.textContent = loc.replace(new RegExp(` ${state}$`), '');
                     
-                    const rawCell = document.createElement('div');
-                    rawCell.className = 'location-cell';
-                    const rawCheckbox = document.createElement('input');
-                    rawCheckbox.type = 'checkbox';
-                    rawCheckbox.id = `${loc} (raw)`;
-                    rawCheckbox.onchange = updatePlot;
-                    rawCell.appendChild(rawCheckbox);
-                    
-                    const smoothedCell = document.createElement('div');
-                    smoothedCell.className = 'location-cell';
-                    const smoothedCheckbox = document.createElement('input');
-                    smoothedCheckbox.type = 'checkbox';
-                    smoothedCheckbox.id = `${loc} (smoothed)`;
-                    smoothedCheckbox.onchange = updatePlot;
-                    smoothedCell.appendChild(smoothedCheckbox);
-                    
                     row.appendChild(cityCell);
-                    row.appendChild(rawCell);
-                    row.appendChild(smoothedCell);
+                    row.addEventListener('click', () => {
+                        toggleLocation({ fullName: loc });
+                    });
+                    
                     table.appendChild(row);
                 });
                 
@@ -199,22 +487,58 @@
             
             window.data = results.data;
             
-            const firstCheckbox = document.querySelector('input[type="checkbox"]');
-            if (firstCheckbox) {
-                firstCheckbox.checked = true;
-                updatePlot();
-            }
+            // Set up data type toggle handlers
+            document.getElementById('showRaw').addEventListener('change', updatePlot);
+            document.getElementById('showSmoothed').addEventListener('change', updatePlot);
+            
+            updatePlot();
+            updateSelectedPanel();
+        }
+        
+        function updateLocationStyles() {
+            // Update main list
+            document.querySelectorAll('.location-row').forEach(row => {
+                const locationName = row.querySelector('.location-cell').textContent;
+                const state = row.closest('.state-group').querySelector('.state-title').textContent;
+                const fullName = `${locationName} ${state}`;
+                row.classList.toggle('selected', selectedLocations.has(fullName));
+            });
+            
+            // Update search results if visible
+            document.querySelectorAll('.search-result-item').forEach(item => {
+                const location = currentResults.find(r => 
+                    r.item.city === item.textContent.replace(item.querySelector('.search-result-state').textContent, '').trim()
+                )?.item;
+                if (location) {
+                    item.classList.toggle('selected', selectedLocations.has(location.fullName));
+                }
+            });
         }
         
         function updatePlot() {
-            const traces = Array.from(document.querySelectorAll('input:checked')).map(cb => ({
-                x: window.data.map(row => row.date),
-                y: window.data.map(row => row[cb.id]),
-                name: `${cb.id.replace(' (raw)', '').replace(' (smoothed)', '')} ${cb.id.includes('smoothed') ? '(smoothed)' : ''}`,
-                line: {
-                    dash: cb.id.includes('smoothed') ? 'dot' : 'solid'
+            const showRaw = document.getElementById('showRaw').checked;
+            const showSmoothed = document.getElementById('showSmoothed').checked;
+            
+            const traces = [];
+            
+            selectedLocations.forEach(location => {
+                if (showRaw) {
+                    traces.push({
+                        x: window.data.map(row => row.date),
+                        y: window.data.map(row => row[`${location} (raw)`]),
+                        name: `${location} (raw)`,
+                        line: { dash: 'solid' }
+                    });
                 }
-            }));
+                if (showSmoothed) {
+                    traces.push({
+                        x: window.data.map(row => row.date),
+                        y: window.data.map(row => row[`${location} (smoothed)`]),
+                        name: `${location} (smoothed)`,
+                        line: { dash: 'dot' }
+                    });
+                }
+            });
             
             Plotly.newPlot('plot', traces, {
                 margin: { t: 40, r: 40, b: 40, l: 40 },
