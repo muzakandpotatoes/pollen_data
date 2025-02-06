@@ -520,14 +520,39 @@
             const showSmoothed = document.getElementById('showSmoothed').checked;
             
             const traces = [];
+            const colors = [
+                '#1f77b4', // blue
+                '#ff7f0e', // orange
+                '#2ca02c', // green
+                '#d62728', // red
+                '#9467bd', // purple
+                '#8c564b', // brown
+                '#e377c2', // pink
+                '#7f7f7f', // gray
+                '#bcbd22', // yellow-green
+                '#17becf', // cyan
+                '#aec7e8', // light blue
+                '#ffbb78', // light orange
+                '#98df8a', // light green
+                '#ff9896', // light red
+                '#c5b0d5', // light purple
+                '#c49c94', // light brown
+                '#f7b6d2', // light pink
+                '#c7c7c7', // light gray
+                '#dbdb8d', // light yellow-green
+                '#9edae5'  // light cyan
+            ];
+            const locationArray = Array.from(selectedLocations); // Convert Set to array for consistent ordering
             
-            selectedLocations.forEach(location => {
+            locationArray.forEach((location, index) => {
+                const color = colors[index % colors.length]; // Cycle through the predefined colors
+                
                 if (showRaw) {
                     traces.push({
                         x: window.data.map(row => row.date),
                         y: window.data.map(row => row[`${location} (raw)`]),
                         name: `${location} (raw)`,
-                        line: { dash: 'solid' }
+                        line: { color: color, dash: 'solid' }
                     });
                 }
                 if (showSmoothed) {
@@ -535,11 +560,15 @@
                         x: window.data.map(row => row.date),
                         y: window.data.map(row => row[`${location} (smoothed)`]),
                         name: `${location} (smoothed)`,
-                        line: { dash: 'dot' }
+                        line: { 
+                            color: color, 
+                            dash: showRaw ? 'dot' : 'solid' // Dashed if raw is shown, solid otherwise
+                        },
+                        opacity: showRaw ? 0.65 : 1.0
                     });
                 }
             });
-            
+
             Plotly.newPlot('plot', traces, {
                 margin: { t: 40, r: 40, b: 40, l: 40 },
                 hovermode: 'x unified',
@@ -562,7 +591,6 @@
                 paper_bgcolor: 'white',
             });
         }
-        
         loadData();
     </script>
 </body>
