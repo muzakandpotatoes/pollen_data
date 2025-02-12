@@ -38,7 +38,10 @@ python -m scripts.download_s3_data
 
 Delete the security credentials.
 
-TODO: skip downloads of files that are already stored on machine.
+Issues:
+- Downloads should be skipped for files already on the machine
 
 ## Run analysis
 
+Issues:
+- City lat/long coords are just from Claude; might be errors

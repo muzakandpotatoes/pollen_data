@@ -52,7 +52,7 @@ def parse_args():
     parser.add_argument(
         "--format",
         choices=["jpeg", "png"],
-        default="jpeg",
+        default="png",
         help="output file format",
     )
 
