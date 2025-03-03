@@ -486,10 +486,6 @@
             });
             
             window.data = results.data;
-
-            // Debug: Print the last date in the dataset to console
-            console.log("Last date in dataset:", window.data[window.data.length - 1].date);
-            console.log("Full last row:", window.data[window.data.length - 1]);
             
             // Set up data type toggle handlers
             document.getElementById('showRaw').addEventListener('change', updatePlot);
