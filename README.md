@@ -41,7 +41,14 @@ Delete the security credentials.
 Issues:
 - Downloads should be skipped for files already on the machine
 
-## Run analysis
+## Update all artifacts
 
-Issues:
-- City lat/long coords are just from Claude; might be errors
+Download data from S3 as above, then run
+```
+python -m scripts.collate_csv
+python -m analysis.choropleth --smooth_method=lowess
+python -m analysis.choropleth
+python -m analysis.integral_choropleth
+```
+This updates the csv file used to inform the interactive chart, and makes updated animations.
+

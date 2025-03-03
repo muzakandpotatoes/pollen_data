@@ -7,6 +7,8 @@ from analysis.utils import load_current_forecast_data, smooth_timeseries
 
 warnings.filterwarnings("ignore", category=pandas.errors.PerformanceWarning)
 
+OUTPUT_DIR = "data"
+
 # State abbreviation to full name mapping
 STATE_NAMES = {
     "AL": "Alabama",
@@ -102,4 +104,4 @@ for loc in locations:
     wide_df[f"{formatted_loc} (smoothed)"] = smoothed
 
 wide_df = wide_df.iloc[:, :]
-wide_df.to_csv("collated.csv", index=False, encoding="utf-8")
+wide_df.to_csv(f"{OUTPUT_DIR}/collated.csv", index=False, encoding="utf-8")
