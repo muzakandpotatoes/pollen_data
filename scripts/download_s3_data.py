@@ -10,6 +10,7 @@ load_dotenv()
 def download_s3_bucket(bucket_name, local_directory):
     """
     Download all files from an S3 bucket to a local directory.
+    Skip files that already exist locally.
 
     Args:
         bucket_name (str): Name of the S3 bucket
@@ -34,6 +35,11 @@ def download_s3_bucket(bucket_name, local_directory):
                     # Get the file path
                     key = obj["Key"]
                     local_file_path = os.path.join(local_directory, key)
+
+                    # Skip if file already exists
+                    if os.path.exists(local_file_path):
+                        print(f"Skipping (already exists): {key}")
+                        continue
 
                     # Create directories if the file is in a subdirectory
                     os.makedirs(os.path.dirname(local_file_path), exist_ok=True)

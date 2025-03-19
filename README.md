@@ -38,17 +38,19 @@ python -m scripts.download_s3_data
 
 Delete the security credentials.
 
-Issues:
-- Downloads should be skipped for files already on the machine
-
 ## Update all artifacts
 
 Download data from S3 as above, then run
 ```
+
 python -m scripts.collate_csv
+echo "CSV collation completed"
 python -m analysis.choropleth --smooth_method=lowess
+echo "Choropleth with lowess smoothing completed"
 python -m analysis.choropleth
+echo "Standard choropleth analysis completed"
 python -m analysis.integral_choropleth
+echo "Integral choropleth analysis completed"
 ```
-This updates the csv file used to inform the interactive chart, and makes updated animations.
+This updates the csv file used to inform the interactive chart, and makes updated animations. Animations can take a while to render.en
 
