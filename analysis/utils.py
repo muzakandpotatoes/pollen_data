@@ -83,7 +83,7 @@ def load_current_forecast_data(data_dir="s3_data"):
 
 def load_data(data_dir="s3_data"):
     """Load data including the earliest available records"""
-    file_path = sorted(glob.glob(f"{data_dir}/*_current.jsonl"))[0]
+    file_path = sorted(glob.glob(f"{data_dir}/*_historic.jsonl"))[0]
     early_data = pd.DataFrame(read_historic_data_file(file_path))
     data = load_current_forecast_data(data_dir)
 
