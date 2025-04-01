@@ -3,7 +3,7 @@ import warnings
 import pandas as pd
 import pandas.errors
 
-from analysis.utils import load_current_forecast_data, smooth_timeseries
+from analysis.utils import load_data, smooth_timeseries
 
 warnings.filterwarnings("ignore", category=pandas.errors.PerformanceWarning)
 
@@ -80,7 +80,7 @@ def format_location(loc):
 
 
 # Load data
-df = load_current_forecast_data("s3_data")
+df = load_data("s3_data")
 
 # Create wide format dataframe
 dates = sorted(df["date"].unique())

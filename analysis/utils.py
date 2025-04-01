@@ -18,6 +18,30 @@ from statsmodels.nonparametric.smoothers_lowess import lowess
 ### DATA MUNGING
 
 
+def read_historic_data_file(file_path):
+    """Read a single JSONL file and extract historical pollen data."""
+    data = []
+
+    with open(file_path, "r") as f:
+        for line in f:
+            record = json.loads(line)
+            location = record["Location"]
+            forecast_date = record["ForecastDate"].split("T")[0]  # Extract date part
+
+            # Process all periods in the location data
+            for period in location["periods"]:
+                period_date = period["Period"].split("T")[0]  # Extract date part
+
+                data.append(
+                    {
+                        "date": period_date,
+                        "location": f"{location['City']}, {location['State']}",
+                        "index": period["Index"],
+                    }
+                )
+    return data
+
+
 def read_current_forecast_file(file_path):
     """Read a single JSONL file and extract today's pollen data."""
     data = []
@@ -55,6 +79,18 @@ def load_current_forecast_data(data_dir="s3_data"):
         all_data.extend(file_data)
 
     return pd.DataFrame(all_data)
+
+
+def load_data(data_dir="s3_data"):
+    """Load data including the earliest available records"""
+    file_path = sorted(glob.glob(f"{data_dir}/*_current.jsonl"))[0]
+    early_data = pd.DataFrame(read_historic_data_file(file_path))
+    data = load_current_forecast_data(data_dir)
+
+    data = pd.concat([early_data, data], axis=0)
+    data = data.drop_duplicates(subset=["date", "location"], keep="first")
+
+    return pd.DataFrame(data)
 
 
 ### TIMESERIES SMOOTHING

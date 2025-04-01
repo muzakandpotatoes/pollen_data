@@ -42,7 +42,6 @@ Delete the security credentials.
 
 Download data from S3 as above, then run
 ```
-
 python -m scripts.collate_csv
 echo "CSV collation completed"
 python -m analysis.choropleth --smooth_method=lowess

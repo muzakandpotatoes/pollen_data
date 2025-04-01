@@ -13,7 +13,7 @@ from analysis.utils import (
     create_interpolation_grid,
     get_coordinates_dict,
     interpolate_spatial_values,
-    load_current_forecast_data,
+    load_data,
 )
 
 
@@ -57,24 +57,6 @@ def parse_args():
     )
 
     return parser.parse_args()
-
-
-import os
-from collections import defaultdict
-
-import cartopy.crs as ccrs
-import cartopy.feature as cfeature
-import geopandas as gpd
-import matplotlib.pyplot as plt
-import numpy as np
-from shapely.geometry import Point
-
-from analysis.utils import (
-    create_interpolation_grid,
-    get_coordinates_dict,
-    interpolate_spatial_values,
-    load_current_forecast_data,
-)
 
 
 def create_masked_plot(lon_mesh, lat_mesh, z_mesh, usa_geom):
@@ -179,7 +161,7 @@ def create_map(
         alpha=0.5,
     )
 
-    plt.title(f"Total Pollen Index Over Time", fontsize=title_size)
+    plt.title("Total Pollen Index Over Time", fontsize=title_size)
 
     # Save the plot
     os.makedirs(output_directory, exist_ok=True)
@@ -196,7 +178,7 @@ def create_map(
 
 def main(args):
     coords_dict = get_coordinates_dict()
-    pollen_data = load_current_forecast_data(args.data_directory)
+    pollen_data = load_data(args.data_directory)
 
     summed_data = process_data(pollen_data, coords_dict)
 

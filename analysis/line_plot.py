@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from analysis.utils import load_current_forecast_data, smooth_timeseries
+from analysis.utils import load_data, smooth_timeseries
 
 
 def plot_pollen_trends(df, location=None, smooth_method=None, smooth_params=None):
@@ -69,7 +69,7 @@ def main():
     # smooth_params = {'window': 5}
 
     # Load data
-    df = load_current_forecast_data(data_directory)
+    df = load_data(data_directory)
 
     # Print some basic statistics
     print("\nData Summary:")

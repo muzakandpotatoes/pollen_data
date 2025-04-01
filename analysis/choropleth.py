@@ -15,7 +15,7 @@ from analysis.utils import (
     create_interpolation_grid,
     get_coordinates_dict,
     interpolate_spatial_values,
-    load_current_forecast_data,
+    load_data,
     smooth_timeseries,
 )
 
@@ -280,7 +280,7 @@ def main(args):
     args.end_date
 
     coords_dict = get_coordinates_dict()
-    pollen_data = load_current_forecast_data(args.data_directory)
+    pollen_data = load_data(args.data_directory)
     if args.smooth_method is not None:
         pollen_data = smooth_pollen_data(pollen_data, args.smooth_method)
     date_data = process_data(
