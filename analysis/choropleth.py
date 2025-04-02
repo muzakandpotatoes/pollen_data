@@ -8,6 +8,7 @@ import geopandas as gpd
 import matplotlib.animation as animation
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 from shapely.geometry import Point
 from tqdm import tqdm
 
@@ -15,6 +16,7 @@ from analysis.utils import (
     create_interpolation_grid,
     get_coordinates_dict,
     interpolate_spatial_values,
+    interpolate_timeseries,
     load_data,
     smooth_timeseries,
 )
@@ -56,7 +58,13 @@ def parse_args():
         "--interpolation_method",
         choices=["nn", "linear", "rbf", "cloughtocher"],
         default="nn",
-        help="Interpolation method: nn (nearest neighbor), linear, rbf, or cloughtocher",
+        help="Spatial interpolation method: nn (nearest neighbor), linear, rbf, or cloughtocher",
+    )
+    parser.add_argument(
+        "--temporal_interpolation",
+        choices=["linear", "cubic", "nearest", "slinear"],
+        default="linear",
+        help="Temporal interpolation method for filling gaps in time series",
     )
     parser.add_argument(
         "--fps",
@@ -121,9 +129,8 @@ def process_data(pollen_data, coords_dict):
         city_state = row["location"]
         value = row["index"]
 
-        if city_state in coords_dict:
+        if city_state in coords_dict and not pd.isna(value):
             lat, lon = coords_dict[city_state]
-
             date_data[row["date"]].append((lat, lon, value))
 
     return date_data
@@ -276,17 +283,21 @@ def create_animation(
 
 
 def main(args):
-    args.start_date
-    args.end_date
-
+    # Load data
     coords_dict = get_coordinates_dict()
     pollen_data = load_data(args.data_directory)
+
+    # Apply temporal interpolation to fill gaps
+    pollen_data = interpolate_timeseries(
+        pollen_data, method=args.temporal_interpolation
+    )
+
+    # Apply smoothing if requested
     if args.smooth_method is not None:
         pollen_data = smooth_pollen_data(pollen_data, args.smooth_method)
-    date_data = process_data(
-        pollen_data,
-        coords_dict,
-    )
+
+    # Process data for visualization
+    date_data = process_data(pollen_data, coords_dict)
 
     create_animation(
         date_data,

@@ -89,6 +89,7 @@ def load_data(data_dir="s3_data"):
 
     data = pd.concat([early_data, data], axis=0)
     data = data.drop_duplicates(subset=["date", "location"], keep="first")
+    data = data.reset_index(drop=True)
 
     return pd.DataFrame(data)
 
@@ -450,3 +451,60 @@ def interpolate_spatial_values(
     z_mesh = np.clip(z_mesh, 0, None)
 
     return z_mesh
+
+
+### TEMPORAL INTERPOLATION
+
+
+def interpolate_timeseries(pollen_df, method="linear"):
+    """
+    Fill in gaps in time series data for each location using interpolation.
+
+    Args:
+        pollen_df: DataFrame with columns 'date', 'location', and 'index'
+        method: Interpolation method ('linear', 'cubic', 'nearest', etc.)
+
+    Returns:
+        DataFrame with filled gaps
+    """
+    # Convert date to datetime if not already
+    if not pd.api.types.is_datetime64_any_dtype(pollen_df["date"]):
+        pollen_df["date"] = pd.to_datetime(pollen_df["date"])
+
+    # Create a complete date range
+    date_range = pd.date_range(
+        start=pollen_df["date"].min(), end=pollen_df["date"].max(), freq="D"
+    )
+
+    # Get unique locations
+    locations = pollen_df["location"].unique()
+
+    # Create an empty DataFrame to store interpolated results
+    interpolated_df = pd.DataFrame()
+
+    # Process each location separately
+    for loc in locations:
+        # Filter data for this location
+        loc_data = pollen_df[pollen_df["location"] == loc].copy()
+
+        # Set date as index for easier reindexing and interpolation
+        loc_data = loc_data.set_index("date")
+
+        # Reindex to include all dates in the range
+        loc_data_full = loc_data.reindex(date_range)
+
+        # Set location for new rows
+        loc_data_full["location"] = loc
+
+        # Interpolate missing values
+        loc_data_full["index"] = loc_data_full["index"].interpolate(method=method)
+
+        # Reset index to get date as a column again
+        loc_data_full = loc_data_full.reset_index()
+        loc_data_full = loc_data_full.rename(columns={"level_0": "date"})
+
+        # Append to the results
+        interpolated_df = pd.concat([interpolated_df, loc_data_full])
+
+    interpolated_df = interpolated_df.reset_index(drop=True)
+    return interpolated_df

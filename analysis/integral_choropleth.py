@@ -13,6 +13,7 @@ from analysis.utils import (
     create_interpolation_grid,
     get_coordinates_dict,
     interpolate_spatial_values,
+    interpolate_timeseries,
     load_data,
 )
 
@@ -179,6 +180,7 @@ def create_map(
 def main(args):
     coords_dict = get_coordinates_dict()
     pollen_data = load_data(args.data_directory)
+    pollen_data = interpolate_timeseries(pollen_data, method="linear")
 
     summed_data = process_data(pollen_data, coords_dict)
 
