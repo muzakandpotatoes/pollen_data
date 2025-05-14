@@ -26,7 +26,6 @@ def read_historic_data_file(file_path):
         for line in f:
             record = json.loads(line)
             location = record["Location"]
-            forecast_date = record["ForecastDate"].split("T")[0]  # Extract date part
 
             # Process all periods in the location data
             for period in location["periods"]:

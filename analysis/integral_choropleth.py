@@ -29,7 +29,7 @@ def parse_args():
     parser.add_argument(
         "--output_directory",
         type=str,
-        default="temp",
+        default="images",
         help="Directory in which to produce output",
     )
     parser.add_argument(

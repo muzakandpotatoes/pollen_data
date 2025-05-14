@@ -2,6 +2,7 @@
 .venv
 .vscode
 animations
+images
 s3_data
 scratch
 .env
