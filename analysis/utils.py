@@ -142,7 +142,8 @@ def smooth_timeseries(data, method="lowess", **kwargs):
         return savgol_filter(data, window_length=window, polyorder=polyorder)
 
     elif method == "lowess":
-        frac = kwargs.get("frac", 0.1)
+        n_records = kwargs.get("n_records", 20)
+        frac = min(n_records / len(data), 1.0)
         return lowess(data, np.arange(len(data)), frac=frac)[:, 1]
 
     elif method == "kalman":
