@@ -1,0 +1,75 @@
+name: Update pollen data
+
+on:
+  schedule:
+    # Run daily at 06:00 UTC (1:00 AM EST / 2:00 AM EDT)
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install boto3 botocore python-dotenv pandas numpy scipy statsmodels filterpy
+
+      - name: Restore S3 data cache
+        uses: actions/cache@v4
+        with:
+          path: s3_data
+          key: s3-data-${{ github.run_id }}
+          restore-keys: |
+            s3-data-
+
+      - name: Download new data from S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: us-east-2
+        run: |
+          python -c "
+          import boto3, os
+
+          s3 = boto3.client('s3')
+          bucket = 'pollendatabucket'
+          local_dir = 's3_data'
+          os.makedirs(local_dir, exist_ok=True)
+
+          paginator = s3.get_paginator('list_objects_v2')
+          for page in paginator.paginate(Bucket=bucket):
+              for obj in page.get('Contents', []):
+                  key = obj['Key']
+                  local_path = os.path.join(local_dir, key)
+                  if os.path.exists(local_path):
+                      continue
+                  os.makedirs(os.path.dirname(local_path), exist_ok=True)
+                  print(f'Downloading: {key}')
+                  s3.download_file(bucket, key, local_path)
+
+          print('Download complete')
+          "
+
+      - name: Update collated CSV
+        run: python -m scripts.collate_csv
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/collated.csv
+          if git diff --cached --quiet; then
+            echo "No changes to collated.csv"
+          else
+            git commit -m "Update pollen data $(date -u +%Y-%m-%d)"
+            git push
+          fi
