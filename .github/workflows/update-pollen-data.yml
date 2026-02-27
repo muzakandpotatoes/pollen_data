@@ -4,11 +4,18 @@ on:
   schedule:
     # Run daily at 06:00 UTC (1:00 AM EST / 2:00 AM EDT)
     - cron: '0 6 * * *'
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
+
+concurrency:
+  group: update-pollen
+  cancel-in-progress: false
 
 jobs:
   update-data:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -66,10 +73,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git add data/collated.csv
           if git diff --cached --quiet; then
             echo "No changes to collated.csv"
           else
             git commit -m "Update pollen data $(date -u +%Y-%m-%d)"
+            git pull --rebase origin main
             git push
           fi
