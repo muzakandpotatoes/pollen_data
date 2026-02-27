@@ -243,7 +243,7 @@
 <body>
     <div class="container">
         <h1 class="title">Pollen Index Trends</h1>
-        <p class="subtitle">Pollen levels from May 2024 to April 2025 across different locations in the United States</p>
+        <p class="subtitle">Pollen levels overlaid by year across different locations in the United States</p>
         <div id="plot"></div>
         <div class="data-type-toggles">
             <label class="data-type-toggle">
@@ -252,6 +252,9 @@
             <label class="data-type-toggle">
                 <input type="checkbox" id="showSmoothed" checked> Show Smoothed Data
             </label>
+        </div>
+        <div class="data-type-toggles" id="yearToggles">
+            <span style="color: #495057; font-weight: 500; margin-right: 4px;">Years:</span>
         </div>
         <div class="selected-panel">
             <div class="selected-header">
@@ -486,11 +489,31 @@
             });
             
             window.data = results.data;
-            
+
+            // Extract sorted unique years
+            const allYears = [...new Set(results.data.map(row => row.date.split('-')[0]))].sort();
+            window.allYears = allYears;
+
+            // Render year checkboxes
+            const yearTogglesDiv = document.getElementById('yearToggles');
+            allYears.forEach(year => {
+                const label = document.createElement('label');
+                label.className = 'data-type-toggle';
+                const cb = document.createElement('input');
+                cb.type = 'checkbox';
+                cb.className = 'year-checkbox';
+                cb.value = year;
+                cb.checked = true;
+                cb.addEventListener('change', updatePlot);
+                label.appendChild(cb);
+                label.appendChild(document.createTextNode(' ' + year));
+                yearTogglesDiv.appendChild(label);
+            });
+
             // Set up data type toggle handlers
             document.getElementById('showRaw').addEventListener('change', updatePlot);
             document.getElementById('showSmoothed').addEventListener('change', updatePlot);
-            
+
             updatePlot();
             updateSelectedPanel();
         }
@@ -518,7 +541,14 @@
         function updatePlot() {
             const showRaw = document.getElementById('showRaw').checked;
             const showSmoothed = document.getElementById('showSmoothed').checked;
-            
+
+            // Collect selected years from checkboxes
+            const selectedYears = [];
+            document.querySelectorAll('.year-checkbox:checked').forEach(cb => selectedYears.push(cb.value));
+            selectedYears.sort();
+
+            const allYears = window.allYears || selectedYears;
+
             const traces = [];
             const colors = [
                 '#1f77b4', // blue
@@ -542,45 +572,61 @@
                 '#dbdb8d', // light yellow-green
                 '#9edae5'  // light cyan
             ];
-            const locationArray = Array.from(selectedLocations); // Convert Set to array for consistent ordering
-            
-            locationArray.forEach((location, index) => {
-                const color = colors[index % colors.length]; // Cycle through the predefined colors
-                
-                if (showRaw) {
-                    traces.push({
-                        x: window.data.map(row => row.date),
-                        y: window.data.map(row => row[`${location} (raw)`]),
-                        name: `${location} (raw)`,
-                        line: { color: color, dash: 'solid' }
+            const locationArray = Array.from(selectedLocations);
+
+            locationArray.forEach((location, locIndex) => {
+                const color = colors[locIndex % colors.length];
+
+                selectedYears.forEach(year => {
+                    // Opacity: oldest = 0.35, newest = 1.0, linearly interpolated across all years
+                    const yearIdx = allYears.indexOf(year);
+                    const opacity = allYears.length === 1
+                        ? 1.0
+                        : 0.35 + (1.0 - 0.35) * yearIdx / (allYears.length - 1);
+
+                    // Filter rows for this year, skip Feb 29
+                    const yearRows = window.data.filter(row => {
+                        const parts = row.date.split('-');
+                        return parts[0] === year && !(parts[1] === '02' && parts[2] === '29');
                     });
-                }
-                if (showSmoothed) {
-                    traces.push({
-                        x: window.data.map(row => row.date),
-                        y: window.data.map(row => row[`${location} (smoothed)`]),
-                        name: `${location} (smoothed)`,
-                        line: { 
-                            color: color, 
-                            dash: showRaw ? 'dot' : 'solid' // Dashed if raw is shown, solid otherwise
-                        },
-                        opacity: showRaw ? 0.65 : 1.0
+
+                    // Map dates to reference year 2001
+                    const xDates = yearRows.map(row => {
+                        const parts = row.date.split('-');
+                        return `2001-${parts[1]}-${parts[2]}`;
                     });
-                }
+
+                    if (showRaw) {
+                        traces.push({
+                            x: xDates,
+                            y: yearRows.map(row => row[`${location} (raw)`]),
+                            name: `${location} ${year} (raw)`,
+                            line: { color, dash: 'solid' },
+                            opacity
+                        });
+                    }
+                    if (showSmoothed) {
+                        traces.push({
+                            x: xDates,
+                            y: yearRows.map(row => row[`${location} (smoothed)`]),
+                            name: `${location} ${year} (smoothed)`,
+                            line: { color, dash: showRaw ? 'dot' : 'solid' },
+                            opacity
+                        });
+                    }
+                });
             });
 
             Plotly.newPlot('plot', traces, {
                 margin: { t: 40, r: 40, b: 40, l: 40 },
                 hovermode: 'x unified',
-                showlegend: true,
-                legend: {
-                    orientation: 'h',
-                    y: -0.2
-                },
+                showlegend: false,
                 xaxis: {
-                    title: 'Date',
+                    title: 'Month',
                     showgrid: true,
-                    gridcolor: '#f0f0f0'
+                    gridcolor: '#f0f0f0',
+                    type: 'date',
+                    tickformat: '%b'
                 },
                 yaxis: {
                     title: 'Pollen Index',
