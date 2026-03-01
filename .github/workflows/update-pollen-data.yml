@@ -74,11 +74,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git pull --rebase origin main
           git add data/collated.csv
           if git diff --cached --quiet; then
             echo "No changes to collated.csv"
           else
             git commit -m "Update pollen data $(date -u +%Y-%m-%d)"
-            git pull --rebase origin main
             git push
           fi
