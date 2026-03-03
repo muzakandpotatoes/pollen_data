@@ -203,6 +203,56 @@
             font-size: 0.9em;
             margin-left: 4px;
         }
+        #map-section {
+            margin-bottom: 16px;
+        }
+        #map-container {
+            position: relative;
+            width: 100%;
+        }
+        #map-canvas {
+            width: 100%;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            background: #f8f9fa;
+            display: block;
+        }
+        #map-tooltip {
+            position: absolute;
+            background: rgba(0,0,0,0.8);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            pointer-events: none;
+            display: none;
+            white-space: pre;
+            z-index: 10;
+        }
+        .slider-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-top: 8px;
+        }
+        .slider-row label {
+            color: #495057;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        #map-date-slider {
+            flex: 1;
+            accent-color: #2ca02c;
+        }
+        #map-date-label {
+            color: #495057;
+            min-width: 150px;
+            text-align: center;
+        }
         @media (max-width: 600px) {
             body {
                 margin: 4px;
@@ -242,8 +292,18 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Pollen Index Trends</h1>
-        <p class="subtitle">Pollen levels overlaid by year across different locations in the United States</p>
+        <h1 class="title">US Pollen Index Trends</h1>
+        <div id="map-section">
+            <div id="map-container">
+                <canvas id="map-canvas"></canvas>
+                <div id="map-tooltip"></div>
+            </div>
+            <div class="slider-row">
+                <label>Date:</label>
+                <input id="map-date-slider" type="range" min="0" max="0" value="0" step="1">
+                <span id="map-date-label"></span>
+            </div>
+        </div>
         <div id="plot"></div>
         <div class="data-type-toggles">
             <label class="data-type-toggle">
@@ -617,16 +677,33 @@
                 });
             });
 
+            // Build indicator line shape if slider is active
+            const shapes = [];
+            if (mapDates.length) {
+                const dateStr = mapDates[parseInt(mapSlider.value)];
+                const parts = dateStr.split('-');
+                const refDate = `2001-${parts[1]}-${parts[2]}`;
+                shapes.push({
+                    type: 'line',
+                    x0: refDate, x1: refDate,
+                    y0: 0, y1: 1,
+                    yref: 'paper',
+                    line: { color: '#2ca02c', width: 2, dash: 'dash' }
+                });
+            }
+
             Plotly.newPlot('plot', traces, {
                 margin: { t: 40, r: 40, b: 40, l: 40 },
                 hovermode: 'x unified',
                 showlegend: false,
+                shapes: shapes,
                 xaxis: {
                     title: 'Month',
                     showgrid: true,
                     gridcolor: '#f0f0f0',
                     type: 'date',
                     tickformat: '%b',
+                    hoverformat: '%B %-d',
                     range: ['2001-01-01', '2001-12-31']
                 },
                 yaxis: {
@@ -636,9 +713,275 @@
                 },
                 plot_bgcolor: 'white',
                 paper_bgcolor: 'white',
+            }, { responsive: true });
+        }
+        // ============================================================
+        // Choropleth Map
+        // ============================================================
+        let mapStations = [];   // [{name, lat, lon}]
+        let mapCoords = null;   // station_coords.json data
+        let stateGeoJSON = null;
+        let usaBoundaryPath = null;
+        let voronoiPixels = null;
+        let mapW = 0, mapH = 0;
+        let mapDates = [];      // all date strings from CSV
+        let mapDateValues = {}; // { "2025-03-01": { "City State": value, ... } }
+
+        const MONTHS_LONG = ['January','February','March','April','May','June',
+            'July','August','September','October','November','December'];
+        function formatDateHuman(dateStr) {
+            const [y, m, d] = dateStr.split('-');
+            return `${parseInt(d)} ${MONTHS_LONG[parseInt(m) - 1]} ${y}`;
+        }
+
+        const LON_MIN = -125, LON_MAX = -66.5, LAT_MIN = 24, LAT_MAX = 50;
+        const mapCanvas = document.getElementById('map-canvas');
+        const mapCtx = mapCanvas.getContext('2d');
+        const mapTooltip = document.getElementById('map-tooltip');
+        const mapSlider = document.getElementById('map-date-slider');
+        const mapDateLabel = document.getElementById('map-date-label');
+
+        function lonLatToXY(lon, lat, w, h) {
+            const x = (lon - LON_MIN) / (LON_MAX - LON_MIN) * w;
+            const y = (1 - (lat - LAT_MIN) / (LAT_MAX - LAT_MIN)) * h;
+            return [x, y];
+        }
+
+        function initMapCanvas() {
+            const containerW = mapCanvas.parentElement.clientWidth;
+            mapW = containerW;
+            mapH = Math.round(containerW * 0.45);
+            mapCanvas.width = mapW;
+            mapCanvas.height = mapH;
+        }
+
+        function buildVoronoi() {
+            if (!mapStations.length) return;
+            voronoiPixels = new Int16Array(mapW * mapH);
+            for (let y = 0; y < mapH; y++) {
+                for (let x = 0; x < mapW; x++) {
+                    const lon = x / mapW * (LON_MAX - LON_MIN) + LON_MIN;
+                    const lat = (1 - y / mapH) * (LAT_MAX - LAT_MIN) + LAT_MIN;
+                    let bestDist = Infinity, bestIdx = 0;
+                    for (let i = 0; i < mapStations.length; i++) {
+                        const s = mapStations[i];
+                        const dlat = lat - s.lat, dlon = lon - s.lon;
+                        const d = dlat * dlat + dlon * dlon;
+                        if (d < bestDist) { bestDist = d; bestIdx = i; }
+                    }
+                    voronoiPixels[y * mapW + x] = bestIdx;
+                }
+            }
+        }
+
+        function pollenColor(value) {
+            // Green gradient: near-white for 0, deep green for 10+
+            if (value == null || isNaN(value)) return [240, 247, 240]; // very light green-gray
+            const t = Math.max(0, Math.min(1, value / 10));
+            // From #f0f7f0 (240,247,240) to #1a7a1a (26,122,26)
+            return [
+                Math.round(240 + (26 - 240) * t),
+                Math.round(247 + (122 - 247) * t),
+                Math.round(240 + (26 - 240) * t)
+            ];
+        }
+
+        function buildUSABoundaryPath() {
+            if (!stateGeoJSON) { usaBoundaryPath = null; return; }
+            usaBoundaryPath = new Path2D();
+            for (const feature of stateGeoJSON.features) {
+                const geom = feature.geometry;
+                const addRing = (coords) => {
+                    let first = true;
+                    for (const [lon, lat] of coords) {
+                        const [x, y] = lonLatToXY(lon, lat, mapW, mapH);
+                        if (first) { usaBoundaryPath.moveTo(x, y); first = false; }
+                        else usaBoundaryPath.lineTo(x, y);
+                    }
+                    usaBoundaryPath.closePath();
+                };
+                if (geom.type === 'Polygon') addRing(geom.coordinates[0]);
+                else if (geom.type === 'MultiPolygon') {
+                    for (const poly of geom.coordinates) addRing(poly[0]);
+                }
+            }
+        }
+
+        function renderChoropleth(dateStr) {
+            if (!voronoiPixels || !mapStations.length) return;
+            const dayData = mapDateValues[dateStr] || {};
+            const imageData = mapCtx.createImageData(mapW, mapH);
+            const pix = imageData.data;
+
+            for (let y = 0; y < mapH; y++) {
+                for (let x = 0; x < mapW; x++) {
+                    const si = voronoiPixels[y * mapW + x];
+                    const st = mapStations[si];
+                    const val = dayData[st.name];
+                    const [r, g, b] = pollenColor(val);
+                    const i = (y * mapW + x) * 4;
+                    pix[i] = r; pix[i+1] = g; pix[i+2] = b; pix[i+3] = 255;
+                }
+            }
+            mapCtx.putImageData(imageData, 0, 0);
+
+            // Clip to US boundary
+            if (usaBoundaryPath) {
+                mapCtx.save();
+                mapCtx.globalCompositeOperation = 'destination-in';
+                mapCtx.fillStyle = '#000';
+                mapCtx.fill(usaBoundaryPath);
+                mapCtx.restore();
+            }
+
+            // State lines
+            if (stateGeoJSON) {
+                mapCtx.save();
+                mapCtx.strokeStyle = 'rgba(100,100,100,0.4)';
+                mapCtx.lineWidth = 0.7;
+                mapCtx.beginPath();
+                for (const feature of stateGeoJSON.features) {
+                    const geom = feature.geometry;
+                    const drawRing = (coords) => {
+                        let first = true;
+                        for (const [lon, lat] of coords) {
+                            const [x, y] = lonLatToXY(lon, lat, mapW, mapH);
+                            if (first) { mapCtx.moveTo(x, y); first = false; }
+                            else mapCtx.lineTo(x, y);
+                        }
+                        mapCtx.closePath();
+                    };
+                    if (geom.type === 'Polygon') {
+                        for (const ring of geom.coordinates) drawRing(ring);
+                    } else if (geom.type === 'MultiPolygon') {
+                        for (const poly of geom.coordinates)
+                            for (const ring of poly) drawRing(ring);
+                    }
+                }
+                mapCtx.stroke();
+                mapCtx.restore();
+            }
+
+            // Station dots
+            mapCtx.save();
+            for (const st of mapStations) {
+                const [x, y] = lonLatToXY(st.lon, st.lat, mapW, mapH);
+                mapCtx.beginPath();
+                mapCtx.arc(x, y, 1.5, 0, Math.PI * 2);
+                mapCtx.fillStyle = 'rgba(0,0,0,0.3)';
+                mapCtx.fill();
+            }
+            mapCtx.restore();
+        }
+
+        // Tooltip on hover
+        mapCanvas.addEventListener('mousemove', (e) => {
+            if (!voronoiPixels || !mapStations.length) return;
+            const rect = mapCanvas.getBoundingClientRect();
+            const scaleX = mapW / rect.width, scaleY = mapH / rect.height;
+            const cx = (e.clientX - rect.left) * scaleX;
+            const cy = (e.clientY - rect.top) * scaleY;
+
+            if (cx < 0 || cy < 0 || cx >= mapW || cy >= mapH) {
+                mapTooltip.style.display = 'none';
+                return;
+            }
+            const si = voronoiPixels[Math.floor(cy) * mapW + Math.floor(cx)];
+            const st = mapStations[si];
+            const dateStr = mapDates[parseInt(mapSlider.value)];
+            const val = (mapDateValues[dateStr] || {})[st.name];
+            const valStr = val != null ? val.toFixed(1) : 'N/A';
+
+            mapTooltip.style.display = 'block';
+            mapTooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+            mapTooltip.style.top = (e.clientY - rect.top - 10) + 'px';
+            mapTooltip.textContent = `${st.name}\nPollen: ${valStr}`;
+        });
+        mapCanvas.addEventListener('mouseleave', () => { mapTooltip.style.display = 'none'; });
+
+        // Update Plotly vertical indicator line
+        function updatePlotIndicator(dateStr) {
+            const plotDiv = document.getElementById('plot');
+            if (!plotDiv || !plotDiv.data || !plotDiv.data.length) return;
+            // Map date to 2001-MM-DD reference
+            const parts = dateStr.split('-');
+            const refDate = `2001-${parts[1]}-${parts[2]}`;
+            Plotly.relayout('plot', {
+                shapes: [{
+                    type: 'line',
+                    x0: refDate, x1: refDate,
+                    y0: 0, y1: 1,
+                    yref: 'paper',
+                    line: { color: '#2ca02c', width: 2, dash: 'dash' }
+                }]
             });
         }
-        loadData();
+
+        // Slider change handler
+        mapSlider.addEventListener('input', () => {
+            const idx = parseInt(mapSlider.value);
+            const dateStr = mapDates[idx];
+            mapDateLabel.textContent = formatDateHuman(dateStr);
+            renderChoropleth(dateStr);
+            updatePlotIndicator(dateStr);
+        });
+
+        async function loadMap() {
+            // Fetch coordinates and state boundaries in parallel
+            const [coordsResp, statesResp] = await Promise.all([
+                fetch('data/station_coords.json'),
+                fetch('data/us_states.json')
+            ]);
+            mapCoords = await coordsResp.json();
+            try { stateGeoJSON = await statesResp.json(); } catch(e) { console.warn('No us_states.json'); }
+
+            // Build station list from coordinates
+            mapStations = Object.entries(mapCoords).map(([name, c]) => ({
+                name, lat: c.lat, lon: c.lon
+            }));
+
+            // Build date-indexed pollen values from the already-loaded CSV data
+            // Use smoothed values by default
+            const data = window.data;
+            if (!data || !data.length) return;
+
+            const allDates = [];
+            for (const row of data) {
+                const dateStr = row.date;
+                allDates.push(dateStr);
+                const dayVals = {};
+                for (const st of mapStations) {
+                    const smoothedKey = `${st.name} (smoothed)`;
+                    const rawKey = `${st.name} (raw)`;
+                    const val = row[smoothedKey] != null ? row[smoothedKey] : row[rawKey];
+                    if (val != null) dayVals[st.name] = val;
+                }
+                mapDateValues[dateStr] = dayVals;
+            }
+            mapDates = allDates;
+
+            // Set slider range and default to most recent date
+            mapSlider.max = mapDates.length - 1;
+            mapSlider.value = mapDates.length - 1;
+            mapDateLabel.textContent = formatDateHuman(mapDates[mapDates.length - 1]);
+
+            // Initialize canvas and render
+            initMapCanvas();
+            buildVoronoi();
+            buildUSABoundaryPath();
+            renderChoropleth(mapDates[mapDates.length - 1]);
+            updatePlotIndicator(mapDates[mapDates.length - 1]);
+
+            // Resize handler
+            window.addEventListener('resize', () => {
+                initMapCanvas();
+                buildVoronoi();
+                buildUSABoundaryPath();
+                renderChoropleth(mapDates[parseInt(mapSlider.value)]);
+            });
+        }
+
+        loadData().then(() => loadMap());
     </script>
 </body>
 </html>

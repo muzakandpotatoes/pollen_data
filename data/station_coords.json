@@ -1,0 +1,974 @@
+{
+  "Aberdeen South Dakota": {
+    "lat": 45.4647,
+    "lon": -98.4864
+  },
+  "Abilene Texas": {
+    "lat": 32.4487,
+    "lon": -99.7331
+  },
+  "Alamosa Colorado": {
+    "lat": 37.4695,
+    "lon": -105.87
+  },
+  "Albany Georgia": {
+    "lat": 31.5785,
+    "lon": -84.1557
+  },
+  "Albany New York": {
+    "lat": 42.6526,
+    "lon": -73.7562
+  },
+  "Albuquerque New Mexico": {
+    "lat": 35.0844,
+    "lon": -106.6504
+  },
+  "Allentown Pennsylvania": {
+    "lat": 40.6023,
+    "lon": -75.4714
+  },
+  "Alpena Michigan": {
+    "lat": 45.0617,
+    "lon": -83.4327
+  },
+  "Altoona Pennsylvania": {
+    "lat": 40.5187,
+    "lon": -78.3947
+  },
+  "Amarillo Texas": {
+    "lat": 35.222,
+    "lon": -101.8313
+  },
+  "Asheville North Carolina": {
+    "lat": 35.5951,
+    "lon": -82.5516
+  },
+  "Astoria Oregon": {
+    "lat": 46.1879,
+    "lon": -123.8313
+  },
+  "Athens Georgia": {
+    "lat": 33.9519,
+    "lon": -83.3576
+  },
+  "Atlanta Georgia": {
+    "lat": 33.749,
+    "lon": -84.388
+  },
+  "Atlantic City New Jersey": {
+    "lat": 39.3643,
+    "lon": -74.4229
+  },
+  "Augusta Georgia": {
+    "lat": 33.4735,
+    "lon": -82.0107
+  },
+  "Austin Texas": {
+    "lat": 30.2672,
+    "lon": -97.7431
+  },
+  "Bakersfield California": {
+    "lat": 35.3733,
+    "lon": -119.0187
+  },
+  "Baltimore Maryland": {
+    "lat": 39.2904,
+    "lon": -76.6122
+  },
+  "Bangor Maine": {
+    "lat": 44.8016,
+    "lon": -68.7712
+  },
+  "Baton Rouge Louisiana": {
+    "lat": 30.4515,
+    "lon": -91.1871
+  },
+  "Beaufort South Carolina": {
+    "lat": 32.4316,
+    "lon": -80.6698
+  },
+  "Beaumont Texas": {
+    "lat": 30.0802,
+    "lon": -94.1266
+  },
+  "Beckley West Virginia": {
+    "lat": 37.7782,
+    "lon": -81.1882
+  },
+  "Bellingham Washington": {
+    "lat": 48.7519,
+    "lon": -122.4787
+  },
+  "Bemidji Minnesota": {
+    "lat": 47.4716,
+    "lon": -94.8827
+  },
+  "Billings Montana": {
+    "lat": 45.7833,
+    "lon": -108.5007
+  },
+  "Binghamton New York": {
+    "lat": 42.0987,
+    "lon": -75.918
+  },
+  "Birmingham Alabama": {
+    "lat": 33.5207,
+    "lon": -86.8025
+  },
+  "Bismarck North Dakota": {
+    "lat": 46.8083,
+    "lon": -100.7837
+  },
+  "Boise Idaho": {
+    "lat": 43.615,
+    "lon": -116.2023
+  },
+  "Boston Massachusetts": {
+    "lat": 42.3601,
+    "lon": -71.0589
+  },
+  "Bowling Green Kentucky": {
+    "lat": 36.9685,
+    "lon": -86.4808
+  },
+  "Bridgeport Connecticut": {
+    "lat": 41.1792,
+    "lon": -73.1894
+  },
+  "Bristol Tennessee": {
+    "lat": 36.5951,
+    "lon": -82.1887
+  },
+  "Brownsville Texas": {
+    "lat": 25.9018,
+    "lon": -97.4975
+  },
+  "Buffalo New York": {
+    "lat": 42.8864,
+    "lon": -78.8784
+  },
+  "Burlington Iowa": {
+    "lat": 40.8075,
+    "lon": -91.1127
+  },
+  "Burlington Vermont": {
+    "lat": 44.4759,
+    "lon": -73.2121
+  },
+  "Burns Oregon": {
+    "lat": 43.5863,
+    "lon": -119.0546
+  },
+  "Cape Girardeau Missouri": {
+    "lat": 37.3059,
+    "lon": -89.5181
+  },
+  "Caribou Maine": {
+    "lat": 46.8653,
+    "lon": -67.9986
+  },
+  "Casper Wyoming": {
+    "lat": 42.8501,
+    "lon": -106.3252
+  },
+  "Cedar City Utah": {
+    "lat": 37.6775,
+    "lon": -113.0619
+  },
+  "Cedar Rapids Iowa": {
+    "lat": 41.9779,
+    "lon": -91.6656
+  },
+  "Champaign Illinois": {
+    "lat": 40.1164,
+    "lon": -88.2434
+  },
+  "Charleston South Carolina": {
+    "lat": 32.7765,
+    "lon": -79.9311
+  },
+  "Charleston West Virginia": {
+    "lat": 38.3498,
+    "lon": -81.6326
+  },
+  "Charlotte North Carolina": {
+    "lat": 35.2271,
+    "lon": -80.8431
+  },
+  "Chattanooga Tennessee": {
+    "lat": 35.0456,
+    "lon": -85.3097
+  },
+  "Cheyenne Wyoming": {
+    "lat": 41.14,
+    "lon": -104.8202
+  },
+  "Chicago Illinois": {
+    "lat": 41.8781,
+    "lon": -87.6298
+  },
+  "Cincinnati Ohio": {
+    "lat": 39.1031,
+    "lon": -84.512
+  },
+  "Cleveland Ohio": {
+    "lat": 41.4993,
+    "lon": -81.6944
+  },
+  "Colorado Springs Colorado": {
+    "lat": 38.8339,
+    "lon": -104.8214
+  },
+  "Columbia Missouri": {
+    "lat": 38.9517,
+    "lon": -92.3341
+  },
+  "Columbus Georgia": {
+    "lat": 32.461,
+    "lon": -84.9877
+  },
+  "Columbus Ohio": {
+    "lat": 39.9612,
+    "lon": -82.9988
+  },
+  "Concord New Hampshire": {
+    "lat": 43.2081,
+    "lon": -71.5376
+  },
+  "Concordia Kansas": {
+    "lat": 39.57,
+    "lon": -97.6625
+  },
+  "Corpus Christi Texas": {
+    "lat": 27.8006,
+    "lon": -97.3964
+  },
+  "Dayton Ohio": {
+    "lat": 39.7589,
+    "lon": -84.1916
+  },
+  "Daytona Beach Florida": {
+    "lat": 29.2108,
+    "lon": -81.0228
+  },
+  "Del Rio Texas": {
+    "lat": 29.3627,
+    "lon": -100.8968
+  },
+  "Denver Colorado": {
+    "lat": 39.7392,
+    "lon": -104.9903
+  },
+  "Detroit Michigan": {
+    "lat": 42.3314,
+    "lon": -83.0458
+  },
+  "Dickinson North Dakota": {
+    "lat": 46.8792,
+    "lon": -102.7896
+  },
+  "Dodge City Kansas": {
+    "lat": 37.7528,
+    "lon": -100.0171
+  },
+  "Dover Delaware": {
+    "lat": 39.1582,
+    "lon": -75.5244
+  },
+  "Dubuque Iowa": {
+    "lat": 42.5006,
+    "lon": -90.6645
+  },
+  "Duluth Minnesota": {
+    "lat": 46.7867,
+    "lon": -92.1005
+  },
+  "East Lansing Michigan": {
+    "lat": 42.7368,
+    "lon": -84.4837
+  },
+  "East Moline Illinois": {
+    "lat": 41.5067,
+    "lon": -90.4446
+  },
+  "East Pittsburgh Pennsylvania": {
+    "lat": 40.3926,
+    "lon": -79.8331
+  },
+  "East Rochester New York": {
+    "lat": 43.1131,
+    "lon": -77.4855
+  },
+  "East Syracuse New York": {
+    "lat": 43.0645,
+    "lon": -76.0711
+  },
+  "Eau Claire Wisconsin": {
+    "lat": 44.8114,
+    "lon": -91.4984
+  },
+  "El Paso Texas": {
+    "lat": 31.7619,
+    "lon": -106.485
+  },
+  "Elkins West Virginia": {
+    "lat": 38.9237,
+    "lon": -79.8467
+  },
+  "Ely Nevada": {
+    "lat": 39.2533,
+    "lon": -114.8742
+  },
+  "Erie Pennsylvania": {
+    "lat": 42.1292,
+    "lon": -80.0851
+  },
+  "Eugene Oregon": {
+    "lat": 44.0521,
+    "lon": -123.0868
+  },
+  "Eureka California": {
+    "lat": 40.8021,
+    "lon": -124.1637
+  },
+  "Evansville Indiana": {
+    "lat": 37.9716,
+    "lon": -87.5711
+  },
+  "Farmington New Mexico": {
+    "lat": 36.7281,
+    "lon": -108.2087
+  },
+  "Flagstaff Arizona": {
+    "lat": 35.1983,
+    "lon": -111.6513
+  },
+  "Flint Michigan": {
+    "lat": 43.0125,
+    "lon": -83.6875
+  },
+  "Florence South Carolina": {
+    "lat": 34.1954,
+    "lon": -79.7626
+  },
+  "Fort Drum New York": {
+    "lat": 44.0509,
+    "lon": -75.7207
+  },
+  "Fort Smith Arkansas": {
+    "lat": 35.3859,
+    "lon": -94.3985
+  },
+  "Fort Wayne Indiana": {
+    "lat": 41.0793,
+    "lon": -85.1394
+  },
+  "Fort Worth Texas": {
+    "lat": 32.7555,
+    "lon": -97.3308
+  },
+  "Fresno California": {
+    "lat": 36.7378,
+    "lon": -119.7871
+  },
+  "Glasgow Montana": {
+    "lat": 48.1973,
+    "lon": -106.6354
+  },
+  "Goodland Kansas": {
+    "lat": 39.3486,
+    "lon": -101.7107
+  },
+  "Grand Forks North Dakota": {
+    "lat": 47.9253,
+    "lon": -97.0329
+  },
+  "Grand Island Nebraska": {
+    "lat": 40.9264,
+    "lon": -98.342
+  },
+  "Grand Junction Colorado": {
+    "lat": 39.0639,
+    "lon": -108.5506
+  },
+  "Grand Rapids Michigan": {
+    "lat": 42.9634,
+    "lon": -85.6681
+  },
+  "Great Falls Montana": {
+    "lat": 47.5065,
+    "lon": -111.3009
+  },
+  "Green Bay Wisconsin": {
+    "lat": 44.5133,
+    "lon": -88.0133
+  },
+  "Greensboro North Carolina": {
+    "lat": 36.0726,
+    "lon": -79.792
+  },
+  "Greenville South Carolina": {
+    "lat": 34.8526,
+    "lon": -82.394
+  },
+  "Gulfport Mississippi": {
+    "lat": 30.3674,
+    "lon": -89.0928
+  },
+  "Hatteras North Carolina": {
+    "lat": 35.2146,
+    "lon": -75.69
+  },
+  "Heart Butte Montana": {
+    "lat": 48.2883,
+    "lon": -112.8407
+  },
+  "Houghton Lake Michigan": {
+    "lat": 44.3145,
+    "lon": -84.7654
+  },
+  "Houston Texas": {
+    "lat": 29.7604,
+    "lon": -95.3698
+  },
+  "Huntington West Virginia": {
+    "lat": 38.4192,
+    "lon": -82.4452
+  },
+  "Huntsville Alabama": {
+    "lat": 34.7304,
+    "lon": -86.5861
+  },
+  "Huron South Dakota": {
+    "lat": 44.3633,
+    "lon": -98.2148
+  },
+  "Indianapolis Indiana": {
+    "lat": 39.7684,
+    "lon": -86.1581
+  },
+  "International Falls Minnesota": {
+    "lat": 48.6023,
+    "lon": -93.404
+  },
+  "Jackson Kentucky": {
+    "lat": 37.5533,
+    "lon": -83.3835
+  },
+  "Jackson Mississippi": {
+    "lat": 32.2988,
+    "lon": -90.1848
+  },
+  "Jackson Tennessee": {
+    "lat": 35.6145,
+    "lon": -88.8139
+  },
+  "Jacksonville Florida": {
+    "lat": 30.3322,
+    "lon": -81.6557
+  },
+  "Jamestown North Dakota": {
+    "lat": 46.9106,
+    "lon": -98.7084
+  },
+  "Jamestown New York": {
+    "lat": 42.097,
+    "lon": -79.2353
+  },
+  "Kalispell Montana": {
+    "lat": 48.192,
+    "lon": -114.3168
+  },
+  "Kansas City Missouri": {
+    "lat": 39.0997,
+    "lon": -94.5786
+  },
+  "Key West Florida": {
+    "lat": 24.5551,
+    "lon": -81.78
+  },
+  "Knoxville Tennessee": {
+    "lat": 35.9606,
+    "lon": -83.9207
+  },
+  "Lake Charles Louisiana": {
+    "lat": 30.2266,
+    "lon": -93.2174
+  },
+  "Lake Dallas Texas": {
+    "lat": 33.129,
+    "lon": -97.025
+  },
+  "Lander Wyoming": {
+    "lat": 42.8333,
+    "lon": -108.7307
+  },
+  "Laredo Texas": {
+    "lat": 27.5054,
+    "lon": -99.5075
+  },
+  "Lewiston Idaho": {
+    "lat": 46.4166,
+    "lon": -117.0177
+  },
+  "Lexington Kentucky": {
+    "lat": 38.0406,
+    "lon": -84.5037
+  },
+  "Lincoln Nebraska": {
+    "lat": 40.8136,
+    "lon": -96.7026
+  },
+  "Los Angeles California": {
+    "lat": 34.0522,
+    "lon": -118.2437
+  },
+  "Louisville Kentucky": {
+    "lat": 38.2527,
+    "lon": -85.7585
+  },
+  "Lubbock Texas": {
+    "lat": 33.5779,
+    "lon": -101.8552
+  },
+  "Lynchburg Virginia": {
+    "lat": 37.4138,
+    "lon": -79.1422
+  },
+  "Macon Georgia": {
+    "lat": 32.8407,
+    "lon": -83.6324
+  },
+  "Madison Wisconsin": {
+    "lat": 43.0731,
+    "lon": -89.4012
+  },
+  "Medford Oregon": {
+    "lat": 42.3265,
+    "lon": -122.8756
+  },
+  "Memphis Tennessee": {
+    "lat": 35.1495,
+    "lon": -90.049
+  },
+  "Meridian Mississippi": {
+    "lat": 32.3643,
+    "lon": -88.7037
+  },
+  "Miami Florida": {
+    "lat": 25.7617,
+    "lon": -80.1918
+  },
+  "Middletown Pennsylvania": {
+    "lat": 40.1992,
+    "lon": -76.7321
+  },
+  "Midland Texas": {
+    "lat": 31.9973,
+    "lon": -102.0779
+  },
+  "Miles City Montana": {
+    "lat": 46.4083,
+    "lon": -105.8406
+  },
+  "Minot North Dakota": {
+    "lat": 48.2327,
+    "lon": -101.2926
+  },
+  "Missoula Montana": {
+    "lat": 46.8721,
+    "lon": -113.994
+  },
+  "Mobile Alabama": {
+    "lat": 30.6954,
+    "lon": -88.0399
+  },
+  "Monroe Louisiana": {
+    "lat": 32.5093,
+    "lon": -92.1193
+  },
+  "Montgomery Alabama": {
+    "lat": 32.3792,
+    "lon": -86.3077
+  },
+  "Montpelier Vermont": {
+    "lat": 44.2601,
+    "lon": -72.5754
+  },
+  "Muskegon Michigan": {
+    "lat": 43.2342,
+    "lon": -86.2484
+  },
+  "Nashville Tennessee": {
+    "lat": 36.1627,
+    "lon": -86.7816
+  },
+  "New Hartford Connecticut": {
+    "lat": 41.8812,
+    "lon": -72.9776
+  },
+  "New Orleans Louisiana": {
+    "lat": 29.9511,
+    "lon": -90.0715
+  },
+  "New York New York": {
+    "lat": 40.7128,
+    "lon": -74.006
+  },
+  "Newark New Jersey": {
+    "lat": 40.7357,
+    "lon": -74.1724
+  },
+  "Norfolk Nebraska": {
+    "lat": 42.0285,
+    "lon": -97.4172
+  },
+  "Norfolk Virginia": {
+    "lat": 36.8508,
+    "lon": -76.2859
+  },
+  "North Canton Ohio": {
+    "lat": 40.8759,
+    "lon": -81.4023
+  },
+  "North Las Vegas Nevada": {
+    "lat": 36.1989,
+    "lon": -115.1175
+  },
+  "North Platte Nebraska": {
+    "lat": 41.1403,
+    "lon": -100.7601
+  },
+  "Oklahoma City Oklahoma": {
+    "lat": 35.4676,
+    "lon": -97.5164
+  },
+  "Olympia Washington": {
+    "lat": 47.0379,
+    "lon": -122.9007
+  },
+  "Omaha Nebraska": {
+    "lat": 41.2565,
+    "lon": -95.9345
+  },
+  "Orlando Florida": {
+    "lat": 28.5383,
+    "lon": -81.3792
+  },
+  "Pendleton Oregon": {
+    "lat": 45.6721,
+    "lon": -118.7886
+  },
+  "Pensacola Florida": {
+    "lat": 30.4213,
+    "lon": -87.2169
+  },
+  "Peoria Illinois": {
+    "lat": 40.6936,
+    "lon": -89.589
+  },
+  "Phoenix Arizona": {
+    "lat": 33.4484,
+    "lon": -112.074
+  },
+  "Pierre South Dakota": {
+    "lat": 44.3683,
+    "lon": -100.351
+  },
+  "Plymouth Minnesota": {
+    "lat": 45.0105,
+    "lon": -93.4555
+  },
+  "Pocatello Idaho": {
+    "lat": 42.8713,
+    "lon": -112.4455
+  },
+  "Portland Maine": {
+    "lat": 43.6591,
+    "lon": -70.2568
+  },
+  "Portland Oregon": {
+    "lat": 45.5155,
+    "lon": -122.6789
+  },
+  "Prescott Arizona": {
+    "lat": 34.54,
+    "lon": -112.4685
+  },
+  "Price Utah": {
+    "lat": 39.5994,
+    "lon": -110.8107
+  },
+  "Providence Rhode Island": {
+    "lat": 41.824,
+    "lon": -71.4128
+  },
+  "Pueblo Colorado": {
+    "lat": 38.2544,
+    "lon": -104.6091
+  },
+  "Quincy Illinois": {
+    "lat": 39.9356,
+    "lon": -91.4098
+  },
+  "Raleigh North Carolina": {
+    "lat": 35.7796,
+    "lon": -78.6382
+  },
+  "Rapid City South Dakota": {
+    "lat": 44.0805,
+    "lon": -103.231
+  },
+  "Redding California": {
+    "lat": 40.5865,
+    "lon": -122.3917
+  },
+  "Reno Nevada": {
+    "lat": 39.5296,
+    "lon": -119.8138
+  },
+  "Richmond Virginia": {
+    "lat": 37.5407,
+    "lon": -77.436
+  },
+  "Roanoke Virginia": {
+    "lat": 37.271,
+    "lon": -79.9414
+  },
+  "Rochester Minnesota": {
+    "lat": 44.0121,
+    "lon": -92.4802
+  },
+  "Rockford Illinois": {
+    "lat": 42.2711,
+    "lon": -89.0937
+  },
+  "Roswell New Mexico": {
+    "lat": 33.3943,
+    "lon": -104.523
+  },
+  "Sacramento California": {
+    "lat": 38.5816,
+    "lon": -121.4944
+  },
+  "Saint Cloud Minnesota": {
+    "lat": 45.5579,
+    "lon": -94.1632
+  },
+  "Saint Louis Missouri": {
+    "lat": 38.627,
+    "lon": -90.1994
+  },
+  "Salem Oregon": {
+    "lat": 44.9429,
+    "lon": -123.0351
+  },
+  "Salt Lake City Utah": {
+    "lat": 40.7608,
+    "lon": -111.891
+  },
+  "San Angelo Texas": {
+    "lat": 31.4638,
+    "lon": -100.437
+  },
+  "San Antonio Texas": {
+    "lat": 29.4241,
+    "lon": -98.4936
+  },
+  "San Diego California": {
+    "lat": 32.7157,
+    "lon": -117.1611
+  },
+  "Santa Barbara California": {
+    "lat": 34.4208,
+    "lon": -119.6982
+  },
+  "Santa Fe New Mexico": {
+    "lat": 35.687,
+    "lon": -105.9378
+  },
+  "Savannah Georgia": {
+    "lat": 32.0809,
+    "lon": -81.0912
+  },
+  "Scottsbluff Nebraska": {
+    "lat": 41.8666,
+    "lon": -103.6672
+  },
+  "Scranton Pennsylvania": {
+    "lat": 41.409,
+    "lon": -75.6624
+  },
+  "Seattle Washington": {
+    "lat": 47.6062,
+    "lon": -122.3321
+  },
+  "Sheridan Wyoming": {
+    "lat": 44.7972,
+    "lon": -106.9562
+  },
+  "Shreveport Louisiana": {
+    "lat": 32.5252,
+    "lon": -93.7502
+  },
+  "Silver City New Mexico": {
+    "lat": 32.7701,
+    "lon": -108.2803
+  },
+  "Sioux City Iowa": {
+    "lat": 42.4963,
+    "lon": -96.4049
+  },
+  "Sioux Falls South Dakota": {
+    "lat": 43.546,
+    "lon": -96.7313
+  },
+  "South Bend Indiana": {
+    "lat": 41.6764,
+    "lon": -86.252
+  },
+  "South Milwaukee Wisconsin": {
+    "lat": 42.9103,
+    "lon": -87.8602
+  },
+  "South San Francisco California": {
+    "lat": 37.6547,
+    "lon": -122.4077
+  },
+  "Spokane Washington": {
+    "lat": 47.6587,
+    "lon": -117.426
+  },
+  "Springfield Illinois": {
+    "lat": 39.7817,
+    "lon": -89.6501
+  },
+  "Springfield Missouri": {
+    "lat": 37.209,
+    "lon": -93.2923
+  },
+  "Sterling Virginia": {
+    "lat": 39.0062,
+    "lon": -77.4286
+  },
+  "Tallahassee Florida": {
+    "lat": 30.4383,
+    "lon": -84.2807
+  },
+  "Tampa Florida": {
+    "lat": 27.9506,
+    "lon": -82.4572
+  },
+  "Toledo Ohio": {
+    "lat": 41.6528,
+    "lon": -83.5379
+  },
+  "Topeka Kansas": {
+    "lat": 39.0473,
+    "lon": -95.6752
+  },
+  "Traverse City Michigan": {
+    "lat": 44.7631,
+    "lon": -85.6206
+  },
+  "Tucson Arizona": {
+    "lat": 32.2226,
+    "lon": -110.9747
+  },
+  "Tulsa Oklahoma": {
+    "lat": 36.154,
+    "lon": -95.9928
+  },
+  "Tupelo Mississippi": {
+    "lat": 34.2576,
+    "lon": -88.7034
+  },
+  "Valentine Nebraska": {
+    "lat": 42.8725,
+    "lon": -100.5507
+  },
+  "Victoria Texas": {
+    "lat": 28.8053,
+    "lon": -97.0036
+  },
+  "Waco Texas": {
+    "lat": 31.5493,
+    "lon": -97.1467
+  },
+  "Washington District of Columbia": {
+    "lat": 38.8977,
+    "lon": -77.0365
+  },
+  "Waterloo Iowa": {
+    "lat": 42.4993,
+    "lon": -92.338
+  },
+  "Wausaukee Wisconsin": {
+    "lat": 45.3791,
+    "lon": -87.9587
+  },
+  "West Columbia South Carolina": {
+    "lat": 33.9932,
+    "lon": -81.0739
+  },
+  "West Des Moines Iowa": {
+    "lat": 41.5772,
+    "lon": -93.7119
+  },
+  "West Fargo North Dakota": {
+    "lat": 46.8769,
+    "lon": -96.8999
+  },
+  "West Mansfield Ohio": {
+    "lat": 40.4031,
+    "lon": -83.5465
+  },
+  "West Palm Beach Florida": {
+    "lat": 26.7153,
+    "lon": -80.0534
+  },
+  "Wichita Falls Texas": {
+    "lat": 33.9137,
+    "lon": -98.4934
+  },
+  "Wichita Kansas": {
+    "lat": 37.6872,
+    "lon": -97.3301
+  },
+  "Williamsport Pennsylvania": {
+    "lat": 41.2414,
+    "lon": -77.0011
+  },
+  "Williston North Dakota": {
+    "lat": 48.147,
+    "lon": -103.618
+  },
+  "Wilmington Delaware": {
+    "lat": 39.7447,
+    "lon": -75.5466
+  },
+  "Wilmington North Carolina": {
+    "lat": 34.2104,
+    "lon": -77.8868
+  },
+  "Winnemucca Nevada": {
+    "lat": 40.973,
+    "lon": -117.7357
+  },
+  "Worcester Massachusetts": {
+    "lat": 42.2626,
+    "lon": -71.8023
+  },
+  "Yakima Washington": {
+    "lat": 46.6021,
+    "lon": -120.5059
+  },
+  "Youngstown Ohio": {
+    "lat": 41.0998,
+    "lon": -80.6495
+  },
+  "Yuma Arizona": {
+    "lat": 32.6927,
+    "lon": -114.6277
+  }
+}
